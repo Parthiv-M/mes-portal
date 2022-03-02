@@ -3,36 +3,51 @@ const { sgMailer } = require('../../utils/sgMailer');
 
 const registerParticipant = async (req, res) => {
     try {
+        const date = new Date();
+        offset = (60 * 5 + 30) * 60 * 1000;
+        var ISTTime = new Date(date.getTime() + offset);
+        timeStamp = ISTTime;
         const {
             name,
+            teamName,
             college,
+            yearOfStudy,
+            phoneNum,
             email,
             regNum,
             regEvents
         } = req.body
         let participant = await Participant.findOne({ regNum });
-        if(participant)    
-            if(regEvents.some(item => participant.regEvents.includes(item))) 
+        if(participant){
+            if(regEvents.some(item => participant.regEvents.includes(item))) {
                 return res
                     .status(400)
                     .json({ 
                         success: false, 
                         message: "You have already registered for one or more of the events" 
                     })
-        const date = new Date();
-        offset = (60 * 5 + 30) * 60 * 1000;
-        var ISTTime = new Date(date.getTime() + offset);
-        timeStamp = ISTTime;
-        const newParticipant 
+            } else {
+                participant.timeStamp = timeStamp;
+                regEvents.forEach(element => {
+                    participant.regEvents.push(element)
+                })
+                participant.isUpdated = true;
+                participant.isUpdatedCount = participant.isUpdatedCount + 1 
+            }
+        } else {
+            const newParticipant 
             = new Participant({
                 name,
+                teamName,
                 college,
+                yearOfStudy,
+                phoneNum,
                 email,
                 regNum,
-                regEvents,
-                timeStamp
+                regEvents
             });
-        await newParticipant.save();
+            await newParticipant.save();
+        }   
         let eventString = "";
         regEvents.forEach((element, index) => {
             if(index !== regEvents.length - 1){

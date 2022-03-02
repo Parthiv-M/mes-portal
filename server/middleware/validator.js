@@ -5,8 +5,17 @@ const registerValidator = () => {
         check("name")
         .isLength({min:3})
         .withMessage("Name must be at least 3 letters long"),
+        check("teamName")
+        .isLength({min:3})
+        .withMessage("Team name must be at least 3 letters long"),
         check("email").isEmail().withMessage("Enter a valid Email"),
         check("regNum", "Please enter college registration number")
+        .not()
+        .isEmpty(),
+        check("yearOfStudy", "Please enter your year of study")
+        .not()
+        .isEmpty(),
+        check("phoneNum", "Please enter phone number")
         .not()
         .isEmpty(),
         check("college", "Enter college name").not().isEmpty()
