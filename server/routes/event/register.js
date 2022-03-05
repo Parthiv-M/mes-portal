@@ -9,15 +9,22 @@ const registerParticipant = async (req, res) => {
         timeStamp = ISTTime;
         const {
             name,
-            teamName,
             college,
             yearOfStudy,
             phoneNum,
             email,
+            learnerId,
             regNum,
-            regEvents
+            regEvents,
+            workshop,
+            informals, 
+            media,
+            panel,
+            pitching,
+            startupFair
         } = req.body
-        let participant = await Participant.findOne({ regNum });
+        let participant 
+                = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
         if(participant){
             if(regEvents.some(item => participant.regEvents.includes(item))) {
                 return res
@@ -35,19 +42,57 @@ const registerParticipant = async (req, res) => {
                 participant.isUpdatedCount = participant.isUpdatedCount + 1 
             }
         } else {
-            const newParticipant 
+            participant 
             = new Participant({
                 name,
-                teamName,
                 college,
                 yearOfStudy,
                 phoneNum,
                 email,
+                learnerId,
                 regNum,
                 regEvents
             });
-            await newParticipant.save();
         }   
+        // add event info to participant schema
+        if(workshop) {
+            participant.workshop.isRegistered = true;
+            participant.workshop.expectations = workshop.expectations;
+            participant.workshop.questions = workshop.questions;
+        }
+        if(informals) {
+            participant.informals.isRegistered = true;
+        }
+        if(media) {
+            participant.media.isRegistered = true;
+        }
+        if(panel) { 
+            participant.panel.isRegistered = true;
+            participant.panel.attracted = panel.attracted;
+            participant.panel.expectations = panel.expectations;
+        }
+        if(pitching) {
+            participant.pitching.isRegistered = true;
+            participant.pitching.companyName = pitching.companyName;
+            participant.pitching.compDesc = pitching.compDesc;
+            participant.pitching.teamRep = pitching.teamRep;
+            participant.pitching.teamMembers = pitching.teamMembers;
+            participant.pitching.website = pitching.website;
+            participant.pitching.legal = pitching.legal;
+            participant.pitching.formed = pitching.formed;  
+            participant.pitching.revenue = pitching.revenue;
+        }
+        if(startupFair) {
+            participant.startupFair.isRegistered = true;
+            participant.startupFair.name = startupFair.name;
+            participant.startupFair.legal = startupFair.legal;
+            participant.startupFair.category = startupFair.category;
+            participant.startupFair.numDesk = startupFair.numDesk;
+            participant.startupFair.describe = startupFair.describe;
+            participant.startupFair.website = startupFair.website;
+            participant.startupFair.extraServ = startupFair.extraServ;  
+        }
+        // send registration confirmation email
         let eventString = "";
         regEvents.forEach((element, index) => {
             if(index !== regEvents.length - 1){
@@ -63,13 +108,13 @@ const registerParticipant = async (req, res) => {
             event_names: eventString,
             name: name
         }
-        sgMailer(data)
-        newParticipant.mailSent = true;
-        await newParticipant.save()
-        res.status(200).json({ success: true, message: "You have registered successfully!" })
+        sgMailer(data);
+        participant.mailSent = true;
+        await participant.save();  
+        return res.status(200).json({ success: true, message: "You have registered successfully!" })
     } catch (error) {
         console.log(error)
-        res.status(500).send({
+        return res.status(500).send({
             success: false,
             message: "Internal server error"
         })

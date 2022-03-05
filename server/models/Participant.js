@@ -5,10 +5,6 @@ const ParticipantSchema = new mongoose.Schema({
         type: String, 
         required: true
     },
-    teamName: {
-        type: String,
-        required: true
-    },
     college: {
         type: String,
         required: true
@@ -25,12 +21,13 @@ const ParticipantSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    regNum: {
+    learnerId: {
         type: String,
         required: true
     },
-    regEvents: {
-        type: Array
+    regNum: {
+        type: String,
+        required: true
     },
     timeStamp: {
         type: Date
@@ -50,6 +47,110 @@ const ParticipantSchema = new mongoose.Schema({
     reminderSent: {
         type: Boolean,
         default: false
+    },
+    // event fields begin
+    regEvents: {
+        type: Array
+    },
+    workshop: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        },
+        expectations: {
+            type: String
+        },
+        questions: {
+            type: String
+        }
+    },
+    informals: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
+    media: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
+    panel: {
+        isRegistered: {
+            type: Boolean
+        },
+        attracted: {
+            type: String
+        },
+        expectaions: {
+            type: String
+        }
+    },
+    pitching: {
+        isRegistered: {
+            type: Boolean
+        },
+        companyName: {
+            type: String
+        },
+        compDesc: {
+            type: String
+        },
+        teamRep: {
+            name: String,
+            email: String,
+            college: String,
+            course: String,
+            regNum: Number,
+            grad: Number,
+            contact: Number
+        },
+        teamMembers: {
+            type: Array
+        },
+        website: {
+            type: String,
+        },
+        legal: {
+            type: String
+        },
+        formed: {
+            type: Date,
+            default: Date.now()
+        },
+        revenue: {
+            type: Number
+        }
+    },
+    startupFair: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        },
+        name: {
+            type: String
+        },
+        legal: {
+            type: String
+        },
+        numDesk: {
+            type: Number,
+            min: 1,
+            max: 4
+        },
+        category: {
+            type: String
+        },
+        describe: {
+            type: String
+        },
+        website: {
+            type: String
+        },
+        extraServ: {
+            type: String
+        }
     }
 });
 
