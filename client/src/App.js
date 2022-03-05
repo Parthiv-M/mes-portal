@@ -1,11 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-import Test from './components/Test';
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+// components
+import Landing from './pages/Landing/Landing';
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Router>
+        <Routes>
+          <Route 
+            path="/"
+            element={ <Landing /> }
+          />
+          {/* <Route 
+            path="/events"
+            element={ <Events /> }
+          /> */}
+        </Routes>
+      </Router>
     </div>
   );
 }
