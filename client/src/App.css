@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
 * {
   box-sizing: border-box;
 }
-
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'Be Vietnam', sans-serif;
+}
+/* customise scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black rgb(0, 0, 0);
+}
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 3px solid black;
 }

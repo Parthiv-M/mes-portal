@@ -1,9 +1,11 @@
-import React from "react"
-import "./Landing.css"
-import {Link} from "react-router-dom"
+import React from "react";
+import "./Landing.css";
+import {Link} from "react-router-dom";
 
-import ecell from "./../../assets/ecellLogo.png"
-import mes from "./../../assets/mes.png"
+import ecell from "./../../assets/ecellLogo.png";
+import mahe from "./../../assets/maheLogo.png";
+import mes from "./../../assets/mes.png";
+import Timeline from "../../components/Timeline/Timeline";
 
 const Landing = () => {
     return (
@@ -15,9 +17,6 @@ const Landing = () => {
                         <Link to="/events">
                             <button>Events</button>
                         </Link>
-                        <a to="/">
-                            <button>MES Timeline</button>
-                        </a>
                         <a href="/">
                             <button>Contact Us</button>
                         </a>
@@ -35,6 +34,8 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
+            <h3 className="timeline-head">MES Timeline</h3>
+            <Timeline />
         </div>
     )
 }
