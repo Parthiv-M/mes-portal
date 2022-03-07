@@ -51,13 +51,12 @@
 }
 .time-box h5 {
     font-weight: bolder;
-    font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .time-box p {
     font-weight: light;
     font-size: 20.8px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: rgb(216, 216, 216);
 }
 @media only screen and (min-width: 768px) {

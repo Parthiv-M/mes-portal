@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 // components
 import Landing from './pages/Landing/Landing';
+import EventsPage from "./pages/Events/Events";
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
             path="/"
             element={ <Landing /> }
           />
-          {/* <Route 
+          <Route 
             path="/events"
-            element={ <Events /> }
-          /> */}
+            element={ <EventsPage /> }
+          />
         </Routes>
       </Router>
     </div>
