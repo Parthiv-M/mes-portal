@@ -1,5 +1,15 @@
 const sgMail = require("@sendgrid/mail");
 const path = require('path');
+// get the Console class
+const { Console } = require("console");
+// get fs module for creating write streams
+const fs = require("fs");
+// make a new logger
+const myLogger = new Console({
+    stdout: fs.createWriteStream("logger.txt"),
+    stderr: fs.createWriteStream("error-log.txt"),
+});
+
 require('dotenv').config({ path: path.join('.env') });
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -22,6 +32,7 @@ const sgMailer = (data) => {
             console.log(error.response.body);
         } else {
             console.log("Mail to " + data.receiver + " sent");
+            myLogger.log("Mail to " + data.receiver + " sent");
         }
      });
 }

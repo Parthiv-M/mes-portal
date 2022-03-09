@@ -1,2 +1,4 @@
 .env 
 node_modules
+logger.txt
+error-log.txt

@@ -83,13 +83,14 @@ const ParticipantSchema = new mongoose.Schema({
         attracted: {
             type: String
         },
-        expectaions: {
+        expectations: {
             type: String
         }
     },
     pitching: {
         isRegistered: {
-            type: Boolean
+            type: Boolean,
+            default: false
         },
         companyName: {
             type: String
@@ -116,8 +117,7 @@ const ParticipantSchema = new mongoose.Schema({
             type: String
         },
         formed: {
-            type: Date,
-            default: Date.now()
+            type: Date
         },
         revenue: {
             type: Number

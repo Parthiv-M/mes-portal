@@ -1,5 +1,15 @@
 const Participant = require('../../models/Participant');
 const { sgMailer } = require('../../utils/sgMailer');
+// get the Console class
+const { Console } = require("console");
+// get fs module for creating write streams
+const fs = require("fs");
+
+// make a new logger
+const myLogger = new Console({
+    stdout: fs.createWriteStream("logger.txt"),
+    stderr: fs.createWriteStream("error-log.txt"),
+});
 
 const registerParticipant = async (req, res) => {
     try {
@@ -114,6 +124,7 @@ const registerParticipant = async (req, res) => {
         return res.status(200).json({ success: true, message: "You have registered successfully!" })
     } catch (error) {
         console.log(error)
+        myLogger.error(error)
         return res.status(500).send({
             success: false,
             message: "Internal server error"
