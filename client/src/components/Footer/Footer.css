@@ -1,0 +1,34 @@
+footer {
+    width: 100vw;
+    min-height: 20vh;
+    background-color: rgb(226, 226, 226);
+}
+.footer-content {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+}
+.icons img {
+    height: 25px;
+    margin: 5px;
+}
+h4 {
+    margin: 0;
+}
+.links {
+    display: flex;
+}
+.meta {
+    margin-top: 20px;
+}
+.meta p:first-child {
+    color: grey;
+}
+.meta p:last-child {
+    margin-top: 20px;
+}

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Landing from './pages/Landing/Landing';
 import EventsPage from "./pages/Events/Events";
 import Register from './pages/Register/Register';
+import Footer from './components/Footer/Footer';
 
 function App() {
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -33,6 +34,7 @@ function App() {
         </Routes>
       </Router>
       <Toaster />
+      <Footer />
     </div>
   );
 }

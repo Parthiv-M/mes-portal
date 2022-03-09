@@ -369,6 +369,23 @@ const Register = () => {
         )
     }
 
+    const handleRegEventsArray = (checked, eventName) => {
+        if(checked) {
+            // add event name to registered events list
+            let us = userData; 
+            us.regEvents.push(eventName); 
+            setUserData(us)
+        } else {
+            // remove event from registered events list
+            let us = userData;
+            const index = us.regEvents.indexOf(eventName);
+            if(index > -1) { 
+                us.regEvents.splice(index, 1); 
+                setUserData(us)
+            }
+        }
+    }
+
     const validateForm = (toastId) => {
         // check for empty fields in each state
         let flag = 0;
@@ -377,6 +394,14 @@ const Register = () => {
                 flag = 1;
             }
         })
+        if (flag === 1) {
+            toast.error("Please fill in all the fields!", { id: toastId });
+            return false;
+        }
+        if(userData.phoneNum.toString().length !== 10) {
+            toast.error("Enter a valid phone number", { id: toastId });
+            return false;
+        }
         if(workshop) {
             Object.values(workData).every(val => {
                 if(val === "") {
@@ -397,6 +422,14 @@ const Register = () => {
                     flag = 1;
                 }
             })
+            if(flag === 1)
+                return false;
+            else {
+                if(pitchingData.teamRep.contact.toString().length !== 10) {
+                    toast.error("Enter a valid phone number", { id: toastId })
+                    return false;
+                }
+            }
         }
         if(startup) {
             Object.values(startData).every(val => {
@@ -405,9 +438,13 @@ const Register = () => {
                 }
             })
         }
+        if(userData.regEvents.length === 0) {
+            toast.error("Please choose at least one event", { id: toastId });
+            return false;
+        }
         if (flag === 1) {
             toast.error("Please fill in all the fields!", { id: toastId });
-            return false
+            return false;
         }
         return true;
     }
@@ -505,7 +542,10 @@ const Register = () => {
                     <div className="events-choice">
                         <div>
                             <input 
-                                onChange={(e) => {setWorkshop(e.target.checked); let us = userData; console.log(us); us.regEvents.push("Workshops"); setUserData(us)}} 
+                                onChange={(e) => { 
+                                    setWorkshop(e.target.checked); 
+                                    handleRegEventsArray(e.target.checked, "Workshops");
+                                }} 
                                 type="checkbox" 
                                 name="workshop"
                             />
@@ -513,7 +553,10 @@ const Register = () => {
                         </div>
                         <div>
                             <input 
-                                onChange={(e) => {setInformals(e.target.checked); teamArray.push("Informals")}}
+                                onChange={(e) => {
+                                    setInformals(e.target.checked); teamArray.push("Informals");
+                                    handleRegEventsArray(e.target.checked, "Informals");
+                                }}
                                 type="checkbox" 
                                 value="" 
                                 name="informals"
@@ -522,7 +565,9 @@ const Register = () => {
                         </div>
                         <div>
                             <input 
-                                onChange={(e) => {setMedia(e.target.checked); teamArray.push("Media")}}
+                                onChange={(e) => {setMedia(e.target.checked);
+                                handleRegEventsArray(e.target.checked, "Media");
+                            }}
                                 type="checkbox" 
                                 value="" 
                                 name="media"
@@ -531,7 +576,10 @@ const Register = () => {
                         </div>
                         <div>
                             <input 
-                                onChange={(e) => {setPanel(e.target.checked); teamArray.push("Panel Discussion")}} 
+                                onChange={(e) => {
+                                    setPanel(e.target.checked); 
+                                    handleRegEventsArray(e.target.checked, "Panel Discussion");
+                            }} 
                                 type="checkbox" 
                                 value="" 
                                 name="panel"
@@ -540,7 +588,10 @@ const Register = () => {
                         </div>
                         <div>
                             <input 
-                                onChange={(e) => {setPitch(e.target.checked); teamArray.push("Pitch Tank")}}
+                                onChange={(e) => {
+                                    setPitch(e.target.checked); 
+                                    handleRegEventsArray(e.target.checked, "Pitch Tank");
+                                }}
                                 type="checkbox" 
                                 value="" 
                                 name="pitch"
@@ -549,7 +600,10 @@ const Register = () => {
                         </div>
                         <div>
                             <input 
-                                onChange={(e) => {setStartup(e.target.checked); teamArray.push("Startup Fair")}}
+                                onChange={(e) => {
+                                    setStartup(e.target.checked); 
+                                    handleRegEventsArray(e.target.checked, "Startup Fair");
+                                }}
                                 type="checkbox" 
                                 value="" 
                                 name="startup"
