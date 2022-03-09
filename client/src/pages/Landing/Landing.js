@@ -30,7 +30,9 @@ const Landing = () => {
                         troubling us into an opportunity to revolutionize the world. E-Summit'22 will present rays of hope so
                         dazzling that they penetrate even the darkness that veils our eyes.</p>
                     <div className="register">
-                        <button>Register Now</button>
+                        <Link to="/register">
+                            <button>Register Now</button>
+                        </Link>
                     </div>
                 </div>
             </div>
