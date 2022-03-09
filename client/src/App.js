@@ -1,5 +1,7 @@
 import './App.css';
+import axios from "axios";
 
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 // components
@@ -8,6 +10,7 @@ import EventsPage from "./pages/Events/Events";
 import Register from './pages/Register/Register';
 
 function App() {
+  axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
   return (
     <div className="App">
       <Router>
@@ -29,6 +32,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Toaster />
     </div>
   );
 }

@@ -2,6 +2,15 @@
     text-align: center;
     width: 100%;
 }
+.events-header button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 1.4rem;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
 .events-header img {
     width: 30%;
 }
@@ -9,6 +18,7 @@
     text-align: center;
     font-size: 48px;
     font-size: 3rem;
+    margin: 0;
 }
 .m-container {
     padding: 32px;

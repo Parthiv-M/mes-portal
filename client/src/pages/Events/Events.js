@@ -1,6 +1,7 @@
 import React from "react";
 import "./Events.css";
 import mes from "./../../assets/mes.png"
+import { Link } from "react-router-dom";
 
 const EventsPage = () => {
     return (
@@ -8,6 +9,9 @@ const EventsPage = () => {
             <div className="events-header">
                 <img src={mes} alt="MES-logo"></img>
                 <h1 className="events-head">MES Events 2022</h1> 
+                <Link to="/register">
+                    <button>Register Now</button>
+                </Link>
             </div>
             <div class="grid">
                 <div class="article">
