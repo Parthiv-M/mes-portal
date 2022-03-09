@@ -6,7 +6,6 @@ const registerValidator = () => {
         .isLength({min:3})
         .withMessage("Name must be at least 3 letters long"),
         check("email").isEmail().withMessage("Enter a valid Email"),
-        check("learnerId").isEmail().withMessage("Enter a valid Email"),
         check("regNum", "Please enter college registration number")
         .not()
         .isEmpty(),
