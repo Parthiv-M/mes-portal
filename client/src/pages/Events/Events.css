@@ -1,15 +1,23 @@
 .events-header {
     text-align: center;
     width: 100%;
+    color: white;
 }
 .events-header button {
-    background-color: black;
+    background-color: #D3D3D3;
     border: none;
-    color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
     padding: 15px 25px;
+    margin: 20px 0;
     border-radius: 1.4rem;
     font-size: 1.2rem;
-    margin: 20px 0;
+}
+.events-header button:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    color: #A4161A;
 }
 .events-header img {
     width: 30%;
@@ -29,7 +37,7 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 7px;
-    color: black;
+    color: #F5F3F4;
     padding: 5px;
 }
 .article {
@@ -40,6 +48,11 @@
     padding: 1.2rem;
     position: relative;
 }
+.article:hover {
+    border: 1px solid #BA181B;
+    color: #BA181B;
+    transform: scale(0.99);
+}
 .card-heading {
     font-size: 32px;
     font-size: 2rem;
@@ -48,8 +61,7 @@
     margin: 0;
     font-weight: 800;
     text-transform: uppercase;
-    background: -webkit-linear-gradient(left, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
-    background: linear-gradient(90deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+    background: radial-gradient(circle at 20% 70%, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

@@ -2,6 +2,8 @@
     min-height: 100vh;
     width: 100vw;
     padding: 5rem;
+    color: white;
+    background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
 .form-wrapper {
     width: 100%;
@@ -11,7 +13,7 @@
     justify-content: center;
 }
 form {
-    width: 25%;
+    width: 30%;
 }
 label {
     display: block;
@@ -19,23 +21,29 @@ label {
     margin: 0;    
 }
 .reg-input {
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
-    margin: 0;
+    margin-top: 5px;
     padding: 12px 7px;
-    border: 0.5px rgb(185, 185, 185) solid;
+    border: 0.5px rgb(146, 146, 146) solid;
     border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7; /* Firefox */
 }
 .reg-input:focus {
     outline: none;
     border-radius: 0;
-    border: 0.5px solid black;
+    border: 0.5px solid white;
 }
 .reg-input:focus+.underline {
     transform: scale(1);
 }
 .underline {
-    background-color: black;        
+    background: radial-gradient(circle at 20% 70%, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);     
     height: 4px;
     display: block;
     -webkit-transform: scale(0, 1);
@@ -90,13 +98,14 @@ form button {
     text-transform: uppercase;
     font-size: 1.25rem;
     margin: 10px 0;
-    background: -webkit-linear-gradient(320deg, #362c59, #2e305b, #26335c, #1e365b, #17385a, #123b59, #0f3c57, #0f3e54);
-  background: linear-gradient(130deg, #362c59, #2e305b, #26335c, #1e365b, #17385a, #123b59, #0f3c57, #0f3e54);
+    background-color: black;
+    font-weight: 800;
 }
 form button:hover {
     transform: scale(0.98);
     transition-duration: 500ms;
     cursor: pointer;
+    border: 2px solid white;
 }
 @media only screen and (max-width: 812px) {
     .register-wrapper {

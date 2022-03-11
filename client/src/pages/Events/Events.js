@@ -16,29 +16,29 @@ const EventsPage = () => {
             <div class="grid">
                 <div class="article">
                     <h1 class="card-heading">Startup Fair </h1>
-                    <p class="text-large">Display of products/services of startups, technology/projects of commercial potential, District Industry Association, Facilitating (Innovation & Entrepreneurship) units of MAHE</p>
+                    <p class="text-large">Students with their own startups can set up a stall and promote their startups and promote their job offerings, if any.</p>
                 </div>
                 <div class="article">
                     <h1 class="card-heading">Panel Discussion</h1>
-                    <p class="text-large">Meeting of top entrepreneurship and discussions on various field of start-up and sharing their opinions on the entrepreneurial decisions.</p>
+                    <p class="text-large">A meeting of top entrepreneurship experts with discussions on various fields of start-ups and businesses. The experts will share their opinions on the entrepreneurial decision-making process.</p>
                 </div>
                 <div class="article ">
-                    <h1 class="card-heading">Pitching Session</h1>
-                    <p class="text-large">The best place to know how big your idea could grow, so brush up your presentation skills and be ready with your plan which would make our panelists eager to put their money in your project</p>
+                    <h1 class="card-heading">Pitch Tank</h1>
+                    <p class="text-large">A pitching session where top startups from MAHE get a chance to present their pitches and stand a chance to get funded by investors in exchange for equity. </p>
                 </div>
               </div>
               <div class="grid">
                 <div class="article">
                     <h1 class="card-heading">Money Quest</h1>
-                    <p class="text-large">Everyone here has played monopoly once and we are bringing you the real-life version of it with some twists of our own so get your business minds ready to make the best deals and last but not the least have fun.</p>
+                    <p class="text-large"> This event will be a life-size treasure-hunt version of the board game “MONOPOLY”, where the rules of the game will be the same but the property-buying mechanics will be changed. All properties will be auctioned off, and teams will need to find safe notes hidden throughout the campus in order to participate in the auctions.</p>
                 </div>
                 <div class="article ">
                     <h1 class="card-heading">Keynote Address</h1>
-                    <p class="text-large">With Shark tank India releasing their first season people from all age groups have started to witness the growth of innovation and this being the Year of Innovation we have someone that would make you to come to edge of your seats</p>
+                    <p class="text-large">With Shark Tank India releasing their first season, people from all age groups have started to witness the growth of innovation. Since this is the year of innovation, we have someone that will have you on the edge of your seat.</p>
                 </div>
                 <div class="article">
                     <h1 class="card-heading">Stand-Up Comedy</h1>
-                    <p class="text-large"> After this hectic and series of serious conversations you would want so conversations that would calm you and your stress levels, and this person talks in way that makes you fall in love with him all over again </p>
+                    <p class="text-large">A stand-up set performed by a surprise guest, to provide a stressbuster after a series of hectic and serious events.</p>
                 </div>
               </div>
             </div>
