@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Be Vietnam', sans-serif;
+  scroll-behavior: smooth;
   background: radial-gradient(circle at 20% 70%, #000000, #000000, #010101, #020202, #030303, #050404, #060506, #080607, #090708, #0a0809, #0b090a, #0b090a);
 }
 /* customise scrollbar */

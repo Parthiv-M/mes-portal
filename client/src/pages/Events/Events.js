@@ -41,6 +41,12 @@ const EventsPage = () => {
                     <p class="text-large">A stand-up set performed by a surprise guest, to provide a stressbuster after a series of hectic and serious events.</p>
                 </div>
               </div>
+              <div class="grid">
+                <div class="article">
+                    <h1 class="card-heading">Agree to Disagree</h1>
+                    <p class="text-large">This event allows participants from all age groups to discuss and deliberate on subjects related to the startup world. Contest to experience and win a real life business-related discourse or gain insight about a certain situation from fellow entrepreneurs!</p>
+                </div>
+              </div>
             </div>
     )
 }

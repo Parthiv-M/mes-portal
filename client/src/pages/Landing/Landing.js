@@ -18,7 +18,7 @@ const Landing = () => {
                         <Link to="/events">
                             <button>Events</button>
                         </Link>
-                        <a href="/">
+                        <a href="#contact">
                             <button>Contact Us</button>
                         </a>
                     </div>

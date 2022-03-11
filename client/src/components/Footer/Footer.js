@@ -9,7 +9,7 @@ import ecell from "./../../assets/eCellLight.png"
 
 const Footer = () => {
     return (
-        <footer> 
+        <footer id="contact"> 
             <div className="footer-content">
                 <p>Get in touch</p>
                 <div className="icons">
