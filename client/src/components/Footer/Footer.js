@@ -3,6 +3,7 @@ import "./Footer.css"
 
 import instagram from "./instagram.svg"
 import email from "./email.svg"
+import linkedin from "./linkedin.svg"
 
 import ecell from "./../../assets/eCellLight.png"
 
@@ -17,6 +18,9 @@ const Footer = () => {
                     </a>
                     <a href="mailto:ecell.mit@manipal.edu">
                         <img src={email}></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ecellmit">
+                        <img src={linkedin}></img>
                     </a>
                 </div>
                 <div className="meta">
