@@ -64,13 +64,7 @@ const ParticipantSchema = new mongoose.Schema({
             type: String
         }
     },
-    informals: {
-        isRegistered: {
-            type: Boolean,
-            default: false
-        }
-    },
-    media: {
+    moneyQuest: {
         isRegistered: {
             type: Boolean,
             default: false
@@ -108,7 +102,7 @@ const ParticipantSchema = new mongoose.Schema({
             contact: Number
         },
         teamMembers: {
-            type: Array
+            type: String
         },
         website: {
             type: String,
@@ -149,6 +143,21 @@ const ParticipantSchema = new mongoose.Schema({
             type: String
         },
         extraServ: {
+            type: String
+        }
+    },
+    debate: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        },
+        committeePref1: {
+            type: String
+        },
+        committeePref2: {
+            type: String
+        },
+        committeePref3: {
             type: String
         }
     }

@@ -13,6 +13,7 @@ const myLogger = new Console({
 
 const registerParticipant = async (req, res) => {
     try {
+        console.log(req.body)
         const date = new Date();
         offset = (60 * 5 + 30) * 60 * 1000;
         var ISTTime = new Date(date.getTime() + offset);
@@ -26,12 +27,12 @@ const registerParticipant = async (req, res) => {
             learnerId,
             regNum,
             regEvents,
-            workshop,
-            informals, 
-            media,
+            // workshop,
+            moneyQuest, 
             panel,
             pitching,
-            startupFair
+            startupFair,
+            debate
         } = req.body
         let participant 
                 = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
@@ -65,16 +66,13 @@ const registerParticipant = async (req, res) => {
             });
         }   
         // add event info to participant schema
-        if(workshop) {
-            participant.workshop.isRegistered = true;
-            participant.workshop.expectations = workshop.expectations;
-            participant.workshop.questions = workshop.questions;
-        }
-        if(informals) {
-            participant.informals.isRegistered = true;
-        }
-        if(media) {
-            participant.media.isRegistered = true;
+        // if(workshop) {
+        //     participant.workshop.isRegistered = true;
+        //     participant.workshop.expectations = workshop.expectations;
+        //     participant.workshop.questions = workshop.questions;
+        // }
+        if(moneyQuest) {
+            participant.moneyQuest.isRegistered = true;
         }
         if(panel) { 
             participant.panel.isRegistered = true;
@@ -101,6 +99,13 @@ const registerParticipant = async (req, res) => {
             participant.startupFair.describe = startupFair.describe;
             participant.startupFair.website = startupFair.website;
             participant.startupFair.extraServ = startupFair.extraServ;  
+        }
+        if(debate) {
+            console.log(debate)
+            participant.debate.isRegistered = true;
+            participant.debate.committeePref1 = debate.committeePref1;
+            participant.debate.committeePref2 = debate.committeePref2;
+            participant.debate.committeePref3 = debate.committeePref3;
         }
         // send registration confirmation email
         let eventString = "";
