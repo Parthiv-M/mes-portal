@@ -10,12 +10,12 @@ const Register = () => {
     const navigate = useNavigate();
 
     const [workshop, setWorkshop] = useState(false);
-    const [informals, setInformals] = useState(false);
+    const [moneyQuest, setMoneyQuest] = useState(false);
     const [media, setMedia] = useState(false);
     const [panel, setPanel] = useState(false);
     const [pitch, setPitch] = useState(false);
     const [startup, setStartup] = useState(false);
-    let teamArray = []
+    const [debate, setDebate] = useState(false);
 
     let workshopInit = {
         expectations: "",
@@ -37,7 +37,7 @@ const Register = () => {
             grad: "",
             contact: ""
         },
-        teamMembers: [],
+        teamMembers: "",
         website: "",
         legal: "",
         formed: null,
@@ -51,6 +51,11 @@ const Register = () => {
         describe: "",
         website: "",
         extraServ: ""
+    }
+    let debateInit = {
+        committeePref1: "",
+        committeePref2: "",
+        committeePref3: ""
     }
     const [userData, setUserData] = useState({
             name: "",
@@ -66,6 +71,7 @@ const Register = () => {
     const [panData, setPan] = useState(panelInit);
     const [pitchingData, setPitching] = useState(pitchingInit);
     const [startData, setStartData] = useState(startupInit);
+    const [debateData, setDebateData] = useState(debateInit);
 
     const Workshop = () => {
         return (
@@ -234,7 +240,7 @@ const Register = () => {
                     <textarea 
                         required  
                         type="text" 
-                        onChange={ (e) => setPitching({ ...pitchingData, teamMembers: teamArray.push(e.target.value)}) }
+                        onChange={ (e) => setPitching({ ...pitchingData, teamMembers: e.target.value}) }
                         placeholder="Names of team members"
                     />
                 </div>
@@ -369,6 +375,56 @@ const Register = () => {
         )
     }
 
+    const Debate = () => {
+        return (
+            <div className="event-type">
+                <h6>Agree to Disagree Details</h6>
+                <div>
+                    <label>Committee Preference One</label>
+                    <select 
+                        required 
+                        className="reg-input-select" 
+                        onChange={(e) => setDebateData({ ...debateData, committeePref1: e.target.value })}
+                    >
+                        <option>Citizens' Dialogue (Discussion Committee)</option>
+                        <option>Leader's Community (Discussion Committee)</option>
+                        <option>National Planning Commission (MUN Committee)</option>
+                        <option>Review Committee (MUN Committee)</option>
+                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Committee Preference Two</label>
+                    <select 
+                        required 
+                        className="reg-input-select" 
+                        onChange={(e) => setDebateData({ ...debateData, committeePref2: e.target.value })}
+                    >
+                        <option>Citizens' Dialogue (Discussion Committee)</option>
+                        <option>Leader's Community (Discussion Committee)</option>
+                        <option>National Planning Commission (MUN Committee)</option>
+                        <option>Review Committee (MUN Committee)</option>
+                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Committee Preference Three</label>
+                    <select 
+                        required 
+                        className="reg-input-select" 
+                        onChange={(e) => setDebateData({ ...debateData, committeePref3: e.target.value })}
+                    >
+                        <option>Citizens' Dialogue (Discussion Committee)</option>
+                        <option>Leader's Community (Discussion Committee)</option>
+                        <option>National Planning Commission (MUN Committee)</option>
+                        <option>Review Committee (MUN Committee)</option>
+                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                    </select>
+                </div>
+            </div>
+        )
+    }
+
     const handleRegEventsArray = (checked, eventName) => {
         if(checked) {
             // add event name to registered events list
@@ -438,6 +494,13 @@ const Register = () => {
                 }
             })
         }
+        if(debate) {
+            Object.values(debateData).every(val => {
+                if(val === "") {
+                    flag = 1;
+                }
+            })
+        }
         if(userData.regEvents.length === 0) {
             toast.error("Please choose at least one event", { id: toastId });
             return false;
@@ -455,8 +518,7 @@ const Register = () => {
         if(validateForm(toastId)) {
             let user = {
                 ...userData,
-                informals: informals,
-                media: media
+                moneyQuest: moneyQuest
             } 
             // add the relevant data to the user object
             if(workshop)
@@ -467,6 +529,8 @@ const Register = () => {
                 user.pitching = pitchingData;
             if(startup)
                 user.startupFair = startData;
+            if(debate)
+                user.debate = debateData;
             console.log(user)
             try {
                 const res 
@@ -540,7 +604,7 @@ const Register = () => {
                     </div>
                     <h5>CHOOSE EVENTS</h5>
                     <div className="events-choice">
-                        <div>
+                        {/* <div>
                             <input 
                                 onChange={(e) => { 
                                     setWorkshop(e.target.checked); 
@@ -550,29 +614,18 @@ const Register = () => {
                                 name="workshop"
                             />
                             <label htmlFor="workshop">Workshop</label>
-                        </div>
+                        </div> */}
                         <div>
                             <input 
                                 onChange={(e) => {
-                                    setInformals(e.target.checked); teamArray.push("Informals");
+                                    setMoneyQuest(e.target.checked);
                                     handleRegEventsArray(e.target.checked, "Informals");
                                 }}
                                 type="checkbox" 
                                 value="" 
                                 name="informals"
                             />
-                            <label htmlFor="informals">Informals</label>
-                        </div>
-                        <div>
-                            <input 
-                                onChange={(e) => {setMedia(e.target.checked);
-                                handleRegEventsArray(e.target.checked, "Media");
-                            }}
-                                type="checkbox" 
-                                value="" 
-                                name="media"
-                            />
-                            <label htmlFor="media">Media</label>
+                            <label htmlFor="informals">Money Quest</label>
                         </div>
                         <div>
                             <input 
@@ -610,11 +663,24 @@ const Register = () => {
                             />
                             <label htmlFor="startup">Startup Fair</label>
                         </div>
+                        <div>
+                            <input 
+                                onChange={(e) => {
+                                    setDebate(e.target.checked); 
+                                    handleRegEventsArray(e.target.checked, "Agree to Disagree");
+                                }}
+                                type="checkbox" 
+                                value="" 
+                                name="debate"
+                            />
+                            <label htmlFor="startup">Agree to Disagree</label>
+                        </div>
                     </div>
-                    {workshop ? Workshop() : ""}
+                    {/* {workshop ? Workshop() : ""} */}
                     {panel ? Panel()  : ""}
                     {pitch ? Pitching()  : ""}
                     {startup ? StartupFair() : ""}
+                    {debate ? Debate() : ""}
                     <button onClick={handleSubmit}>Register</button>
                 </form>
             </div>
