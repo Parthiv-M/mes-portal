@@ -30,6 +30,7 @@ const sgMailer = (data) => {
      sgMail.send(msg, (error, result) => {
         if (error) {
             console.log(error.response.body);
+            myLogger.error(error.response.body)
         } else {
             console.log("Mail to " + data.receiver + " sent");
             myLogger.log("Mail to " + data.receiver + " sent");

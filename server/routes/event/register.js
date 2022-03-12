@@ -118,7 +118,7 @@ const registerParticipant = async (req, res) => {
         });
         const data = {
             receiver: email,
-            sender: "parthivmenon01@gmail.com",
+            sender: "mes22.ecellmit@gmail.com",
             templateName: "register",
             event_names: eventString,
             name: name
