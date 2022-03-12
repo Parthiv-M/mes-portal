@@ -618,13 +618,13 @@ const Register = () => {
                             <input 
                                 onChange={(e) => {
                                     setMoneyQuest(e.target.checked);
-                                    handleRegEventsArray(e.target.checked, "Informals");
+                                    handleRegEventsArray(e.target.checked, "Money Quest");
                                 }}
                                 type="checkbox" 
                                 value="" 
-                                name="informals"
+                                name="money"
                             />
-                            <label htmlFor="informals">Money Quest</label>
+                            <label htmlFor="money">Money Quest</label>
                         </div>
                         <div>
                             <input 
