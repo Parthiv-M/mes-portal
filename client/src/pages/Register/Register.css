@@ -1,7 +1,6 @@
 .register-wrapper {
     min-height: 100vh;
     width: 100vw;
-    padding: 80px;
     padding: 5rem;
     color: white;
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
@@ -39,6 +38,9 @@ label {
     border-radius: 5px;
     background-color: transparent;
     color: white;
+}
+textarea {
+    background-color: transparent;
 }
 .reg-input-select {
     font-size: 16px;

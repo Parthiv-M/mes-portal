@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import mes from "./../../assets/mes.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CheckboxCard from "../../components/CheckboxCard/CheckboxCard";
 
 const Register = () => {
 
@@ -255,13 +256,13 @@ const Register = () => {
                     <span className="underline"></span>
                 </div>
                 <div>
-                    <label>Legal Status</label>
+                    <label>Company Type</label>
                     <input 
                         required 
                         className="reg-input" 
                         type="text" 
                         onChange={ (e) => setPitching({ ...pitchingData, legal: e.target.value }) }
-                        placeholder="Legal status"
+                        placeholder="Company Type"
                     />
                     <span className="underline"></span>
                 </div>
@@ -603,77 +604,38 @@ const Register = () => {
                     </div>
                     <h5>CHOOSE EVENTS</h5>
                     <div className="events-choice">
-                        {/* <div>
-                            <input 
-                                onChange={(e) => { 
-                                    setWorkshop(e.target.checked); 
-                                    handleRegEventsArray(e.target.checked, "Workshops");
-                                }} 
-                                type="checkbox" 
-                                name="workshop"
-                            />
-                            <label htmlFor="workshop">Workshop</label>
-                        </div> */}
-                        <div>
-                            <input 
-                                onChange={(e) => {
-                                    setMoneyQuest(e.target.checked);
-                                    handleRegEventsArray(e.target.checked, "Money Quest");
-                                }}
-                                type="checkbox" 
-                                value="" 
-                                name="money"
-                            />
-                            <label htmlFor="money">Money Quest</label>
-                        </div>
-                        <div>
-                            <input 
-                                onChange={(e) => {
-                                    setPanel(e.target.checked); 
-                                    handleRegEventsArray(e.target.checked, "Panel Discussion");
-                            }} 
-                                type="checkbox" 
-                                value="" 
-                                name="panel"
-                            />
-                            <label htmlFor="panel">Panel Discussion</label>
-                        </div>
-                        <div>
-                            <input 
-                                onChange={(e) => {
-                                    setPitch(e.target.checked); 
-                                    handleRegEventsArray(e.target.checked, "Pitch Tank");
-                                }}
-                                type="checkbox" 
-                                value="" 
-                                name="pitch"
-                            />
-                            <label htmlFor="pitch">Pitch Tank</label>
-                        </div>
-                        <div>
-                            <input 
-                                onChange={(e) => {
-                                    setStartup(e.target.checked); 
-                                    handleRegEventsArray(e.target.checked, "Startup Fair");
-                                }}
-                                type="checkbox" 
-                                value="" 
-                                name="startup"
-                            />
-                            <label htmlFor="startup">Startup Fair</label>
-                        </div>
-                        <div>
-                            <input 
-                                onChange={(e) => {
-                                    setDebate(e.target.checked); 
-                                    handleRegEventsArray(e.target.checked, "Agree to Disagree");
-                                }}
-                                type="checkbox" 
-                                value="" 
-                                name="debate"
-                            />
-                            <label htmlFor="startup">Agree to Disagree</label>
-                        </div>
+                    <fieldset className="checkbox-group">
+                        <CheckboxCard 
+                            eventName="Startup Fair" 
+                            eventMode="Offline" 
+                            changeFunc={setStartup} 
+                            handleArray={handleRegEventsArray} 
+                        />
+                        <CheckboxCard 
+                            eventName="Panel Discussion" 
+                            eventMode="Offline" 
+                            changeFunc={setPanel} 
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="Pitch Tank" 
+                            eventMode="Offline" 
+                            changeFunc={setPitch} 
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="Agree to Disagree" 
+                            eventMode="Online" 
+                            changeFunc={setDebate} 
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="Money Quest" 
+                            eventMode="Offline" 
+                            changeFunc={setMoneyQuest} 
+                            handleArray={handleRegEventsArray}
+                        />
+                    </fieldset>
                     </div>
                     {/* {workshop ? Workshop() : ""} */}
                     {panel ? Panel()  : ""}
