@@ -13,7 +13,7 @@ const Timeline = () => {
                         <p>Inauguration ~ Director, MIT</p>
                     </div>
                     <div className="time-box">
-                        <h5>All About Meta and Web3</h5>
+                        <h5>Business in Metaverse</h5>
                         <p>Metaverse Webinar ~ Anshul Rustaggi</p>
                     </div>
                 </div>

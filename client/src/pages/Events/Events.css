@@ -12,10 +12,12 @@
     padding: 15px 25px;
     margin: 20px 0;
     border-radius: 1.4rem;
+    font-size: 19.2px;
     font-size: 1.2rem;
 }
 .events-header button:hover {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
     cursor: pointer;
     color: #A4161A;
 }
@@ -25,15 +27,16 @@
 .events-head {
     text-align: center;
     font-size: 48px;
+    font-size: 48px;
     font-size: 3rem;
     margin: 0;
 }
 .m-container {
     padding: 32px;
+    padding: 32px;
     padding: 2rem;
 }
 .grid {
-    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 7px;
@@ -45,29 +48,36 @@
     border-radius: 10px;
     border: 1px solid grey;
     padding: 19.2px;
+    padding: 19.2px;
     padding: 1.2rem;
     position: relative;
 }
 .article:hover {
     border: 1px solid #BA181B;
     color: #BA181B;
-    transform: scale(0.99);
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
 }
 .card-heading {
     font-size: 32px;
+    font-size: 32px;
     font-size: 2rem;
+    padding: 9.6px;
     padding: 9.6px;
     padding: 0.6rem;
     margin: 0;
     font-weight: 800;
     text-transform: uppercase;
+    background: -webkit-radial-gradient(20% 70%, circle, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);
     background: radial-gradient(circle at 20% 70%, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .text-large{
     font-size: 19.2px;
+    font-size: 19.2px;
     font-size: 1.2rem;
+    padding: 0 16px;
     padding: 0 16px;
     padding: 0 1rem;
 }

@@ -1,16 +1,26 @@
 .register-wrapper {
     min-height: 100vh;
     width: 100vw;
+    padding: 80px;
     padding: 5rem;
     color: white;
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
 .form-wrapper {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 form {
     width: 30%;
@@ -40,9 +50,25 @@ label {
     background-color: black;
     color: white;
 }
+::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* Firefox */
+}
+::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* Firefox */
+}
+:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* Firefox */
+}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
-    opacity: 0.7; /* Firefox */
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* Firefox */
 }
 .reg-input:focus, .reg-input-select:focus {
     outline: none;
@@ -50,9 +76,11 @@ label {
     border: 0.5px solid white;
 }
 .reg-input:focus+.underline {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
 }
 .underline {
+    background: -webkit-radial-gradient(20% 70%, circle, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);
     background: radial-gradient(circle at 20% 70%, #a4161a, #a5171b, #aa191d, #b01d20, #b72123, #c02528, #c82a2c, #d12e31, #d93235, #df3538, #e3373a, #e5383b);     
     height: 4px;
     display: block;
@@ -66,6 +94,7 @@ form h5 {
     margin: 0;
     margin-top: 10px;
     margin-left: 5px;
+    font-size: 17.6px;
     font-size: 1.1rem;
 }
 .events-choice div {
@@ -73,11 +102,15 @@ form h5 {
 }
 .events-choice label {
     display: inline;
+    font-size: 16px;
     font-size: 1rem;
 }
 .events-choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: 10px 0;
 }
 .event-type h6 {
@@ -86,6 +119,7 @@ form h5 {
     padding: 10px 0;
     border-bottom: 1px solid grey;
     border-top: 1px solid grey;
+    font-size: 16px;
     font-size: 1rem;
 }
 textarea {
@@ -106,14 +140,17 @@ form button {
     border-radius: 10px;
     color: white;
     text-transform: uppercase;
+    font-size: 20px;
     font-size: 1.25rem;
     margin: 10px 0;
     background-color: black;
     font-weight: 800;
 }
 form button:hover {
-    transform: scale(0.98);
-    transition-duration: 500ms;
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
     cursor: pointer;
     border: 2px solid white;
 }

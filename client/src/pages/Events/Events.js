@@ -46,6 +46,10 @@ const EventsPage = () => {
                     <h1 class="card-heading">Agree to Disagree</h1>
                     <p class="text-large">This event allows participants from all age groups to discuss and deliberate on subjects related to the startup world. Contest to experience and win a real life business-related discourse or gain insight about a certain situation from fellow entrepreneurs!</p>
                 </div>
+                <div class="article">
+                    <h1 class="card-heading">Case Maze</h1>
+                    <p class="text-large">This will be a case study competition which will help students develop critical thinking in terms of businesses and startups. A detailed case study about 2 startups/companies will be released. Participants will need to analyze them and answer questions based on them.This will take place in 4 challenging rounds.</p>
+                </div>
               </div>
             </div>
     )

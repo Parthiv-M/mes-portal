@@ -11,7 +11,6 @@ const Register = () => {
 
     const [workshop, setWorkshop] = useState(false);
     const [moneyQuest, setMoneyQuest] = useState(false);
-    const [media, setMedia] = useState(false);
     const [panel, setPanel] = useState(false);
     const [pitch, setPitch] = useState(false);
     const [startup, setStartup] = useState(false);
@@ -390,7 +389,7 @@ const Register = () => {
                         <option>Leader's Community (Discussion Committee)</option>
                         <option>National Planning Commission (MUN Committee)</option>
                         <option>Review Committee (MUN Committee)</option>
-                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
                     </select>
                 </div>
                 <div>
@@ -404,7 +403,7 @@ const Register = () => {
                         <option>Leader's Community (Discussion Committee)</option>
                         <option>National Planning Commission (MUN Committee)</option>
                         <option>Review Committee (MUN Committee)</option>
-                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
                     </select>
                 </div>
                 <div>
@@ -418,7 +417,7 @@ const Register = () => {
                         <option>Leader's Community (Discussion Committee)</option>
                         <option>National Planning Commission (MUN Committee)</option>
                         <option>Review Committee (MUN Committee)</option>
-                        <option>MSDE: Sectoral Budget Allocation under SIP</option>
+                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
                     </select>
                 </div>
             </div>
