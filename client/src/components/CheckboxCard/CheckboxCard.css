@@ -111,10 +111,9 @@
   text-align: center;
 }
   
-@media only screen and (max-width: 812px) {
+@media only screen and (max-width: 800px) {
   .checkbox-tile {
-    width: 350px;
-    margin: 0;
+    width: 320px;
     margin: 10px auto;
   }
   .checkbox-tile .name-logo {
