@@ -29,6 +29,15 @@ const Timeline = () => {
               </li>
               <li>
                 <div className="timeline-content">
+                    <h2 className="date">24th to 27th March 2022</h2>
+                    <div className="time-box">
+                        <h5>Round 2</h5>
+                        <p>Case Maze ~ Round 2</p>
+                    </div>
+                </div>
+              </li>
+              <li>
+                <div className="timeline-content">
                     <h2 className="date">25th March 2022</h2>
                     <div className="time-box">
                         <h5>Round 2</h5>
@@ -51,6 +60,10 @@ const Timeline = () => {
                         <h5>Deadline</h5>
                         <p>Case Maze solution submission</p>
                     </div>
+                    <div className="time-box">
+                        <h5>Quiz</h5>
+                        <p>BizzQuiz</p>
+                    </div>
                 </div>
               </li>
               <li>
@@ -70,7 +83,7 @@ const Timeline = () => {
                 <div className="timeline-content">
                     <h2 className="date">1st April 2022</h2>
                     <div className="time-box">
-                        <h5>3.30pm to 5.45 pm</h5>
+                        <h5>2.30pm to 5.45 pm</h5>
                         <p>Panel Discussion on Entrepreneurship Essentials, finance and business</p>
                     </div>
                     <div className="time-box">
@@ -95,7 +108,7 @@ const Timeline = () => {
                         <p>Keynote session</p>
                     </div>
                     <div className="time-box">
-                        <h5>10am to 2pm</h5>
+                        <h5>10am to 4pm</h5>
                         <p>Startup Fair</p>
                     </div>
                     <div className="time-box">

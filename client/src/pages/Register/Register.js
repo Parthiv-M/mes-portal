@@ -6,6 +6,19 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CheckboxCard from "../../components/CheckboxCard/CheckboxCard";
 
+import caseLogo from "./../../assets/logos/1.png"
+import pitchLogo from "./../../assets/logos/2.png"
+import debateLogo from "./../../assets/logos/3.png"
+import metaLogo from "./../../assets/logos/4.png"
+import moneyLogo from "./../../assets/logos/5.png"
+import standupLogo from "./../../assets/logos/6.png"
+import panelLogo from "./../../assets/logos/7.png"
+import innovationLogo from "./../../assets/logos/8.png"
+import keynoteLogo from "./../../assets/logos/9.png"
+import talkLogo from "./../../assets/logos/10.png"
+import bizLogo from "./../../assets/logos/11.png"
+import workshopLogo from "./../../assets/logos/12.png"
+
 const Register = () => {
 
     const navigate = useNavigate();
@@ -85,7 +98,7 @@ const Register = () => {
     const Workshop = () => {
         return (
             <div className="event-type">
-                <h6>Workshop Details</h6>
+                <h6>Metaverse Workshop Details</h6>
                 <div>
                     <label>Expectations</label>
                     <input 
@@ -304,7 +317,7 @@ const Register = () => {
     const StartupFair = () => {
         return (
             <div className="event-type">
-                <h6>Startup Fair Details</h6>
+                <h6>Innovation Mela Details</h6>
                 <div>
                     <label>Name of Startup</label>
                     <input 
@@ -458,7 +471,7 @@ const Register = () => {
         return (
             <div className="event-type">
                 <h6 style={{ margin: "10px" }}>Case Maze</h6>
-                <a className="d2c" href={d2cLink} target="_blank" rel="noreferrer">
+                <a className="d2c" href={d2cLink} target="_blank" rel="noreferrer" onClick={(e) => setCaseMaze(true)}>
                     Register on D2C Here
                 </a>
             </div>
@@ -584,6 +597,8 @@ const Register = () => {
                 user.moneyQuest = moneyData;
             if(talk)
                 user.talk = talk;
+            if(caseMaze)
+                user.caseMaze = caseMaze;
             console.log(user)
             try {
                 const res 
@@ -659,56 +674,71 @@ const Register = () => {
                     <div className="events-choice">
                     <fieldset className="checkbox-group">
                         <CheckboxCard 
+                            eventName="Metaverse Workshop" 
+                            eventMode="Online" 
+                            changeFunc={setWorkshop} 
+                            logo={workshopLogo}
+                            handleArray={handleRegEventsArray} 
+                        />
+                        <CheckboxCard 
                             eventName="Innovation Mela" 
                             eventMode="Offline" 
                             changeFunc={setStartup} 
+                            logo={innovationLogo}
                             handleArray={handleRegEventsArray} 
                         />
                         <CheckboxCard 
                             eventName="Panel Discussion" 
                             eventMode="Offline" 
-                            changeFunc={setPanel} 
+                            changeFunc={setPanel}
+                            logo={panelLogo} 
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Pitch Tank" 
                             eventMode="Offline" 
                             changeFunc={setPitch} 
+                            logo={pitchLogo}
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Agree to Disagree" 
                             eventMode="Online" 
-                            changeFunc={setDebate} 
+                            changeFunc={setDebate}
+                            logo={debateLogo} 
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Money Quest" 
                             eventMode="Offline" 
                             changeFunc={setMoneyQuest} 
+                            logo={moneyLogo}
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Keynote Session" 
                             eventMode="Offline" 
                             changeFunc={setKeyNote} 
+                            logo={keynoteLogo}
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Talk Series" 
                             eventMode="Offline" 
-                            changeFunc={setTalk} 
+                            changeFunc={setTalk}
+                            logo={talkLogo} 
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
                             eventName="Case Maze" 
                             eventMode="Online" 
                             changeFunc={setCaseMaze} 
+                            logo={caseLogo}
                             handleArray={handleRegEventsArray}
                         />
                     </fieldset>
                     </div>
-                    {/* {workshop ? Workshop() : ""} */}
+                    {workshop ? Workshop() : ""}
                     {panel ? Panel()  : ""}
                     {pitch ? Pitching()  : ""}
                     {startup ? StartupFair() : ""}
