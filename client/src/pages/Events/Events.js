@@ -58,7 +58,7 @@ const EventsPage = () => {
               <div className="grid">
                 <div className="article">
                     <h1 className="card-heading">Workshops</h1>
-                    <p className="text-large">It is  an offline event where in a lot of renowned degnitereis would  come and enlighten us with all the knowledge they have to offer. We have some amazing people on board and it would be an exciting and enlightening event.</p>
+                    <p className="text-large">It is  an offline event where in a lot of renowned dignitaries would come and enlighten us with all the knowledge they have to offer. We have some amazing people on board and it would be an exciting and enlightening event.</p>
                 </div>
                 <div className="article">
                     <h1 className="card-heading">Biz Quiz</h1>
