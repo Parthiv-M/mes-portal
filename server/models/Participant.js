@@ -58,6 +58,12 @@ const ParticipantSchema = new mongoose.Schema({
             default: false
         }
     },
+    caseMaze: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
     workshop: {
         isRegistered: {
             type: Boolean,

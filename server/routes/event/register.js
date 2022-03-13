@@ -28,12 +28,13 @@ const registerParticipant = async (req, res) => {
             regNum,
             regEvents,
             keyNote,
-            // workshop,
+            workshop,
             moneyQuest, 
             panel,
             pitching,
             startupFair,
-            debate
+            debate,
+            caseMaze
         } = req.body
         let participant 
                 = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
@@ -68,13 +69,16 @@ const registerParticipant = async (req, res) => {
             });
         }   
         // add event info to participant schema
-        // if(workshop) {
-        //     participant.workshop.isRegistered = true;
-        //     participant.workshop.expectations = workshop.expectations;
-        //     participant.workshop.questions = workshop.questions;
-        // }
+        if(workshop) {
+            participant.workshop.isRegistered = true;
+            participant.workshop.expectations = workshop.expectations;
+            participant.workshop.questions = workshop.questions;
+        }
         if(keyNote) {
             participant.keyNote.isRegistered = true;
+        }
+        if(caseMaze) {
+            participant.caseMaze.isRegistered = true;
         }
         if(moneyQuest) {
             participant.moneyQuest.isRegistered = true;
