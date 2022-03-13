@@ -98,7 +98,7 @@ const Register = () => {
     const Workshop = () => {
         return (
             <div className="event-type">
-                <h6>Metaverse Workshop Details</h6>
+                <h6>Metaverse Webinar Details</h6>
                 <div>
                     <label>Expectations</label>
                     <input 

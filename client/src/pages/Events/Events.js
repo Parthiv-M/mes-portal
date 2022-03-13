@@ -55,6 +55,16 @@ const EventsPage = () => {
                     <p className="text-large">Interact with Industry experts who will share their insights on how to go about building a solid business plan for your startup idea. Learn how to build relationships and communicate with people to excel as an entrepreneur.</p>
                 </div>
               </div>
+              <div className="grid">
+                <div className="article">
+                    <h1 className="card-heading">Workshops</h1>
+                    <p className="text-large">It is  an offline event where in a lot of renowned degnitereis would  come and enlighten us with all the knowledge they have to offer. We have some amazing people on board and it would be an exciting and enlightening event.</p>
+                </div>
+                <div className="article">
+                    <h1 className="card-heading">Biz Quiz</h1>
+                    <p className="text-large">Explore yourself and fathom your depths of interest, to pull out your veiling curiosity in the world of and business. BizQuiz at MES 2022 is designed to pull the inner quiz master out of you!</p>
+                </div>
+              </div>
             </div>
     )
 }
