@@ -677,7 +677,7 @@ const Register = () => {
                             eventName="Metaverse Webinar" 
                             eventMode="Online" 
                             changeFunc={setWorkshop} 
-                            logo={workshopLogo}
+                            logo={metaLogo}
                             handleArray={handleRegEventsArray} 
                         />
                         {/* <CheckboxCard 

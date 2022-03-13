@@ -3,7 +3,7 @@ import "./Landing.css";
 import {Link} from "react-router-dom";
 
 import ecell from "./../../assets/eCellLight.png";
-// import mahe from "./../../assets/maheLogo.png";
+import mahe from "./../../assets/maheLogo.png";
 import mes from "./../../assets/mesLogo.png";
 import Timeline from "../../components/Timeline/Timeline";
 
@@ -13,8 +13,11 @@ const Landing = () => {
             <div className="gradient-wrapper">
             <div className="content-wrapper">
                 <div className="dummy-nav-wrapper">
-                    <div className="dummy-nav">
-                        <img className="ecell-logo" src={ecell} alt="E-Cell MIT Logo" />
+                    <nav className="dummy-nav">
+                        <div className="brand-img">
+                            <img alt="Revels Logo" className="ecell-logo" src={ecell}></img>
+                            <img alt="Revels Logo" className="mahe-logo" src={mahe}></img>
+                        </div>
                         <div className="buttons-wrapper">
                             <div className="register">
                                 <Link to="/register">
@@ -28,7 +31,7 @@ const Landing = () => {
                                 <button>Contact Us</button>
                             </a>
                         </div>
-                    </div>
+                    </nav>
                 </div>
                 <div className="description">
                     <div className="mes-logo">
