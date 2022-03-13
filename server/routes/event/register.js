@@ -27,6 +27,7 @@ const registerParticipant = async (req, res) => {
             learnerId,
             regNum,
             regEvents,
+            keyNote,
             // workshop,
             moneyQuest, 
             panel,
@@ -59,6 +60,7 @@ const registerParticipant = async (req, res) => {
                 college,
                 yearOfStudy,
                 phoneNum,
+                keyNote,
                 email,
                 learnerId,
                 regNum,
@@ -71,8 +73,12 @@ const registerParticipant = async (req, res) => {
         //     participant.workshop.expectations = workshop.expectations;
         //     participant.workshop.questions = workshop.questions;
         // }
+        if(keyNote) {
+            participant.keyNote.isRegistered = true;
+        }
         if(moneyQuest) {
             participant.moneyQuest.isRegistered = true;
+            participant.moneyQuest.numMems = moneyQuest.numMems;
         }
         if(panel) { 
             participant.panel.isRegistered = true;

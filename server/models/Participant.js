@@ -52,6 +52,12 @@ const ParticipantSchema = new mongoose.Schema({
     regEvents: {
         type: Array
     },
+    keyNote: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
     workshop: {
         isRegistered: {
             type: Boolean,
@@ -68,6 +74,10 @@ const ParticipantSchema = new mongoose.Schema({
         isRegistered: {
             type: Boolean,
             default: false
+        },
+        numMems: {
+            type: Number,
+            default: 4
         }
     },
     panel: {
