@@ -680,55 +680,55 @@ const Register = () => {
                             logo={workshopLogo}
                             handleArray={handleRegEventsArray} 
                         />
-                        <CheckboxCard 
+                        {/* <CheckboxCard 
                             eventName="Innovation Mela" 
                             eventMode="Offline" 
                             changeFunc={setStartup} 
                             logo={innovationLogo}
                             handleArray={handleRegEventsArray} 
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Panel Discussion" 
                             eventMode="Offline" 
                             changeFunc={setPanel}
                             logo={panelLogo} 
                             handleArray={handleRegEventsArray}
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Pitch Tank" 
                             eventMode="Offline" 
                             changeFunc={setPitch} 
                             logo={pitchLogo}
                             handleArray={handleRegEventsArray}
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Agree to Disagree" 
                             eventMode="Online" 
                             changeFunc={setDebate}
                             logo={debateLogo} 
                             handleArray={handleRegEventsArray}
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Money Quest" 
                             eventMode="Offline" 
                             changeFunc={setMoneyQuest} 
                             logo={moneyLogo}
                             handleArray={handleRegEventsArray}
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Keynote Session" 
                             eventMode="Offline" 
                             changeFunc={setKeyNote} 
                             logo={keynoteLogo}
                             handleArray={handleRegEventsArray}
-                        />
-                        <CheckboxCard 
+                        /> */}
+                        {/* <CheckboxCard 
                             eventName="Talk Series" 
                             eventMode="Offline" 
                             changeFunc={setTalk}
                             logo={talkLogo} 
                             handleArray={handleRegEventsArray}
-                        />
+                        /> */}
                         <CheckboxCard 
                             eventName="Case Maze" 
                             eventMode="Online" 
