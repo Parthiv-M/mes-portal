@@ -5,6 +5,13 @@
     color: white;
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
+.d2c {
+    background-color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #660708;
+}
 .form-wrapper {
     width: 100%;
     display: -webkit-box;

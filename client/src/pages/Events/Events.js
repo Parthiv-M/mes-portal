@@ -15,7 +15,7 @@ const EventsPage = () => {
             </div>
             <div className="grid">
                 <div className="article">
-                    <h1 className="card-heading">Startup Fair </h1>
+                    <h1 className="card-heading">Innovation Mela</h1>
                     <p className="text-large">Students with their own startups can set up a stall and promote their startups and promote their job offerings, if any.</p>
                 </div>
                 <div className="article">
@@ -49,6 +49,10 @@ const EventsPage = () => {
                 <div className="article">
                     <h1 className="card-heading">Case Maze</h1>
                     <p className="text-large">This will be a case study competition which will help students develop critical thinking in terms of businesses and startups. A detailed case study about 2 startups/companies will be released. Participants will need to analyze them and answer questions based on them.This will take place in 4 challenging rounds.</p>
+                </div>
+                <div className="article">
+                    <h1 className="card-heading">Talk Series</h1>
+                    <p className="text-large">Interact with Industry experts who will share their insights on how to go about building a solid business plan for your startup idea. Learn how to build relationships and communicate with people to excel as an entrepreneur.</p>
                 </div>
               </div>
             </div>

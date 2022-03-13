@@ -20,7 +20,7 @@ const Timeline = () => {
               </li>
               <li>
                 <div className="timeline-content">
-                    <h2 className="date">24th March 2022</h2>
+                    <h2 className="date">23rd March 2022</h2>
                     <div className="time-box">
                         <h5>Case Maze Begins</h5>
                         <p>Case Maze Round 1 ~ Quiz</p>
@@ -31,8 +31,8 @@ const Timeline = () => {
                 <div className="timeline-content">
                     <h2 className="date">25th March 2022</h2>
                     <div className="time-box">
-                        <h5>Shortlisting Round</h5>
-                        <p>Case Maze ~ Shortlisting Teams</p>
+                        <h5>Round 2</h5>
+                        <p>Case Maze ~ Round 2</p>
                     </div>
                 </div>
               </li>
@@ -60,10 +60,10 @@ const Timeline = () => {
                         <h5>Presentation</h5>
                         <p>Case Maze Top 5 presentations</p>
                     </div>
-                    <div className="time-box">
+                    {/* <div className="time-box">
                         <h5>Movie Night</h5>
                         <p>Movie Night at FC2 Amphitheatre</p>
-                    </div>
+                    </div> */}
                 </div>
               </li>
               <li>

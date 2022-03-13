@@ -35,6 +35,12 @@ const Footer = () => {
                         <a href="/register">Register</a>
                     </div>
                     <p>Manipal Entrepreneurship Summit 2022</p>
+                    <div className="contact-area">
+                        <p>Contact</p>
+                        <a href="tel:+919082928995">Saish Shetty</a>
+                        <a href="tel:+919819148140">Shroat Mehta</a>
+                        <a href="tel:+919530101234">Ujjwal Somani</a>
+                    </div>
                 </div>
             </div>
         </footer>

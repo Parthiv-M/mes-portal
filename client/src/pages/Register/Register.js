@@ -10,12 +10,17 @@ const Register = () => {
 
     const navigate = useNavigate();
 
+    const d2cLink = "https://dare2compete.com/p/case-maze-manipal-entrepreneurship-summit-manipal-academy-of-higher-education-mahe-karnataka-273797";
+
     const [workshop, setWorkshop] = useState(false);
     const [moneyQuest, setMoneyQuest] = useState(false);
     const [panel, setPanel] = useState(false);
     const [pitch, setPitch] = useState(false);
     const [startup, setStartup] = useState(false);
     const [debate, setDebate] = useState(false);
+    const [keyNote, setKeyNote] = useState(false);
+    const [talk, setTalk] = useState(false);
+    const [caseMaze, setCaseMaze] = useState(false);
 
     let workshopInit = {
         expectations: "",
@@ -57,6 +62,9 @@ const Register = () => {
         committeePref2: "",
         committeePref3: ""
     }
+    let moneyInit = {
+        numMems: ""
+    }
     const [userData, setUserData] = useState({
             name: "",
             college: "",
@@ -72,6 +80,7 @@ const Register = () => {
     const [pitchingData, setPitching] = useState(pitchingInit);
     const [startData, setStartData] = useState(startupInit);
     const [debateData, setDebateData] = useState(debateInit);
+    const [moneyData, setMoneyData] = useState(moneyInit);
 
     const Workshop = () => {
         return (
@@ -307,7 +316,7 @@ const Register = () => {
                     />
                     <span className="underline"></span>
                 </div>
-                <div>
+                {/* <div>
                     <label>Legal Status</label>
                     <input 
                         required
@@ -317,7 +326,7 @@ const Register = () => {
                         placeholder="Legal status"
                     />
                     <span className="underline"></span>
-                </div>
+                </div> */}
                 <div>
                     <label>Number of people at desk</label>
                     <input 
@@ -425,6 +434,37 @@ const Register = () => {
         )
     }
 
+    const MoneyQuest = () => {
+        return (
+            <div className="event-type">
+                <h6>Money Quest</h6>
+                <div>
+                    <label>Number of team members</label>
+                    <input 
+                        required 
+                        className="reg-input" 
+                        type="text" 
+                        value={moneyData.numMems}
+                        onChange={(e) => setMoneyData({ ...moneyData, numMems: e.target.value })}
+                        placeholder="Only filled by team leader"
+                    />
+                    <span className="underline"></span>
+                </div>
+            </div>
+        )
+    }
+
+    const CaseMaze = () => {
+        return (
+            <div className="event-type">
+                <h6 style={{ margin: "10px" }}>Case Maze</h6>
+                <a className="d2c" href={d2cLink} target="_blank" rel="noreferrer">
+                    Register on D2C Here
+                </a>
+            </div>
+        )
+    }
+
     const handleRegEventsArray = (checked, eventName) => {
         if(checked) {
             // add event name to registered events list
@@ -501,6 +541,13 @@ const Register = () => {
                 }
             })
         }
+        if(moneyQuest) {
+            Object.values(moneyData).every(val => {
+                if(val === "") {
+                    flag = 1;
+                }
+            })
+        }
         if(userData.regEvents.length === 0) {
             toast.error("Please choose at least one event", { id: toastId });
             return false;
@@ -521,6 +568,8 @@ const Register = () => {
                 moneyQuest: moneyQuest
             } 
             // add the relevant data to the user object
+            if(keyNote)
+                user.keyNote = keyNote;
             if(workshop)
                 user.workshop = workData;
             if(panel)
@@ -531,6 +580,10 @@ const Register = () => {
                 user.startupFair = startData;
             if(debate)
                 user.debate = debateData;
+            if(moneyQuest)
+                user.moneyQuest = moneyData;
+            if(talk)
+                user.talk = talk;
             console.log(user)
             try {
                 const res 
@@ -606,7 +659,7 @@ const Register = () => {
                     <div className="events-choice">
                     <fieldset className="checkbox-group">
                         <CheckboxCard 
-                            eventName="Startup Fair" 
+                            eventName="Innovation Mela" 
                             eventMode="Offline" 
                             changeFunc={setStartup} 
                             handleArray={handleRegEventsArray} 
@@ -635,6 +688,24 @@ const Register = () => {
                             changeFunc={setMoneyQuest} 
                             handleArray={handleRegEventsArray}
                         />
+                        <CheckboxCard 
+                            eventName="Keynote Session" 
+                            eventMode="Offline" 
+                            changeFunc={setKeyNote} 
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="Talk Series" 
+                            eventMode="Offline" 
+                            changeFunc={setTalk} 
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="Case Maze" 
+                            eventMode="Online" 
+                            changeFunc={setCaseMaze} 
+                            handleArray={handleRegEventsArray}
+                        />
                     </fieldset>
                     </div>
                     {/* {workshop ? Workshop() : ""} */}
@@ -642,6 +713,8 @@ const Register = () => {
                     {pitch ? Pitching()  : ""}
                     {startup ? StartupFair() : ""}
                     {debate ? Debate() : ""}
+                    {moneyQuest ? MoneyQuest() : ""}
+                    {caseMaze ? CaseMaze() : ""}
                     <button onClick={handleSubmit}>Register</button>
                 </form>
             </div>

@@ -12,15 +12,22 @@ const Landing = () => {
         <div className="page-wrapper">
             <div className="gradient-wrapper">
             <div className="content-wrapper">
-                <div className="dummy-nav">
-                    <img className="ecell-logo" src={ecell} alt="E-Cell MIT Logo" />
-                    <div className="buttons-wrapper">
-                        <Link to="/events">
-                            <button>Events</button>
-                        </Link>
-                        <a href="#contact">
-                            <button>Contact Us</button>
-                        </a>
+                <div className="dummy-nav-wrapper">
+                    <div className="dummy-nav">
+                        <img className="ecell-logo" src={ecell} alt="E-Cell MIT Logo" />
+                        <div className="buttons-wrapper">
+                            <div className="register">
+                                <Link to="/register">
+                                    <button>Register Now</button>
+                                </Link>
+                            </div>
+                            <Link to="/events">
+                                <button>Events</button>
+                            </Link>
+                            <a href="#contact">
+                                <button>Contact Us</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="description">
@@ -32,11 +39,6 @@ const Landing = () => {
                         discussion on potent ideas. Such ideas have the power to turn the issues troubling us into an opportunities to revolutionize the world. 
                         E-Summit'22 will present rays of hope so dazzling that they penetrate even the darkness that veils our eyes.
                     </p>
-                    <div className="register">
-                        <Link to="/register">
-                            <button>Register Now</button>
-                        </Link>
-                    </div>
                 </div>
             </div>
             </div>
