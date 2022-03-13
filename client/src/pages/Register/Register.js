@@ -674,7 +674,7 @@ const Register = () => {
                     <div className="events-choice">
                     <fieldset className="checkbox-group">
                         <CheckboxCard 
-                            eventName="Metaverse Workshop" 
+                            eventName="Metaverse Webinar" 
                             eventMode="Online" 
                             changeFunc={setWorkshop} 
                             logo={workshopLogo}
