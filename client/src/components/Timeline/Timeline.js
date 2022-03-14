@@ -31,8 +31,7 @@ const Timeline = () => {
                 <div className="timeline-content">
                     <h2 className="date">24th to 27th March 2022</h2>
                     <div className="time-box">
-                        <h5>Round 2</h5>
-                        <p>Case Maze ~ Round 2</p>
+                        <h5>Talk Series</h5>
                     </div>
                 </div>
               </li>

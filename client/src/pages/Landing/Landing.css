@@ -8,7 +8,7 @@
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
 .mahe-logo {
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
 }
 .mes-logo {
@@ -73,7 +73,7 @@
             transform: scale(1.02);
 }
 .description {
-    padding-top: 12%;
+    padding-top: 15%;
     color: #D3D3D3;
     width: 70%;
     text-align: center;

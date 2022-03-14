@@ -65,7 +65,7 @@ const EventsPage = () => {
                     <p className="text-large">Explore yourself and fathom your depths of interest, to pull out your veiling curiosity in the world of and business. BizQuiz at MES 2022 is designed to pull the inner quiz master out of you!</p>
                 </div>
                 <div className="article">
-                    <h1 className="card-heading">Metaverse Webinar</h1>
+                    <h1 className="card-heading">Business in Metaverse</h1>
                     <p className="text-large">Let's do some exciting new businesses in the Metaverse! Do you be the next Meta in the Web3 space? Join us for a session on business opportunities in Web3.</p>
                 </div>
               </div>

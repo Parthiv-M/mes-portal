@@ -38,9 +38,11 @@ const Landing = () => {
                         <img src={mes} alt="MES Logo"/>
                     </div>
                     <p>
-                        The 17th edition of Entrepreneurship Summit is a 2-day event that is being organized with the vision of providing a platform that stimulates 
-                        discussion on potent ideas. Such ideas have the power to turn the issues troubling us into an opportunities to revolutionize the world. 
-                        E-Summit'22 will present rays of hope so dazzling that they penetrate even the darkness that veils our eyes.
+                        MAHE's flagship entrepreneurship event, MES, is a landmark two-day event from 17th March to 2nd April in the hybrid model. In this 
+                        5th edition, we plan on bringing ideas, zeal and passion like never seen before. Here, a mere thought to solve a problem delivers solutions 
+                        that will not just revolutionise the world but encourage others to put their thinking caps on and work outside their comfort zones. 
+                        Creativity, innovation, and thriving for excellence are the primary carriers of this year's summit. Through MES, E-Cell MIT plans to 
+                        instill a culture of economic innovation at MAHE and establish industry relations.
                     </p>
                 </div>
             </div>
