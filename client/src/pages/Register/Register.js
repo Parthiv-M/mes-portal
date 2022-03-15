@@ -680,13 +680,13 @@ const Register = () => {
                             logo={metaLogo}
                             handleArray={handleRegEventsArray} 
                         />
-                        {/* <CheckboxCard 
+                        <CheckboxCard 
                             eventName="Innovation Mela" 
                             eventMode="Offline" 
                             changeFunc={setStartup} 
                             logo={innovationLogo}
                             handleArray={handleRegEventsArray} 
-                        /> */}
+                        />
                         {/* <CheckboxCard 
                             eventName="Panel Discussion" 
                             eventMode="Offline" 
@@ -694,20 +694,20 @@ const Register = () => {
                             logo={panelLogo} 
                             handleArray={handleRegEventsArray}
                         /> */}
-                        {/* <CheckboxCard 
+                        <CheckboxCard 
                             eventName="Pitch Tank" 
                             eventMode="Offline" 
                             changeFunc={setPitch} 
                             logo={pitchLogo}
                             handleArray={handleRegEventsArray}
-                        /> */}
-                        {/* <CheckboxCard 
+                        />
+                        <CheckboxCard 
                             eventName="Agree to Disagree" 
                             eventMode="Online" 
                             changeFunc={setDebate}
                             logo={debateLogo} 
                             handleArray={handleRegEventsArray}
-                        /> */}
+                        />
                         {/* <CheckboxCard 
                             eventName="Money Quest" 
                             eventMode="Offline" 
