@@ -73,7 +73,7 @@ const Register = () => {
     let debateInit = {
         committeePref1: "",
         committeePref2: "",
-        committeePref3: ""
+        // committeePref3: ""
     }
     let moneyInit = {
         numMems: ""
@@ -408,11 +408,8 @@ const Register = () => {
                         className="reg-input-select" 
                         onChange={(e) => setDebateData({ ...debateData, committeePref1: e.target.value })}
                     >
-                        <option>Citizens' Dialogue (Discussion Committee)</option>
-                        <option>Leader's Community (Discussion Committee)</option>
-                        <option>National Planning Commission (MUN Committee)</option>
-                        <option>Review Committee (MUN Committee)</option>
-                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
+                        <option>Too soon to IPO</option>
+                        <option>Sell it Out</option>
                     </select>
                 </div>
                 <div>
@@ -422,14 +419,11 @@ const Register = () => {
                         className="reg-input-select" 
                         onChange={(e) => setDebateData({ ...debateData, committeePref2: e.target.value })}
                     >
-                        <option>Citizens' Dialogue (Discussion Committee)</option>
-                        <option>Leader's Community (Discussion Committee)</option>
-                        <option>National Planning Commission (MUN Committee)</option>
-                        <option>Review Committee (MUN Committee)</option>
-                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
+                        <option>Too soon to IPO</option>
+                        <option>Sell it Out</option>
                     </select>
                 </div>
-                <div>
+                {/* <div>
                     <label>Committee Preference Three</label>
                     <select 
                         required 
@@ -442,7 +436,7 @@ const Register = () => {
                         <option>Review Committee (MUN Committee)</option>
                         <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
                     </select>
-                </div>
+                </div> */}
             </div>
         )
     }
@@ -703,7 +697,7 @@ const Register = () => {
                         />
                         <CheckboxCard 
                             eventName="Agree to Disagree" 
-                            eventMode="Online" 
+                            eventMode="Offline" 
                             changeFunc={setDebate}
                             logo={debateLogo} 
                             handleArray={handleRegEventsArray}

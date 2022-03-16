@@ -9,8 +9,8 @@ const Timeline = () => {
                 <div className="timeline-content">
                     <h2 className="date">17th March 2022</h2>
                     <div className="time-box">
-                        <h5>Welcome to MES</h5>
-                        <p>Inauguration ~ Director, MIT</p>
+                        <h5>Welcome to MES 2022</h5>
+                        <p>Launch ~ Director, MIT</p>
                     </div>
                     <div className="time-box">
                         <h5>Business in Metaverse</h5>
@@ -20,7 +20,7 @@ const Timeline = () => {
               </li>
               <li>
                 <div className="timeline-content">
-                    <h2 className="date">23rd March 2022</h2>
+                    <h2 className="date">24th March 2022</h2>
                     <div className="time-box">
                         <h5>Case Maze Begins</h5>
                         <p>Case Maze Round 1 ~ Quiz</p>
