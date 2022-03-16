@@ -173,9 +173,9 @@ const ParticipantSchema = new mongoose.Schema({
         committeePref2: {
             type: String
         },
-        committeePref3: {
-            type: String
-        }
+        // committeePref3: {
+        //     type: String
+        // }
     }
 });
 

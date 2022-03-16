@@ -115,7 +115,7 @@ const registerParticipant = async (req, res) => {
             participant.debate.isRegistered = true;
             participant.debate.committeePref1 = debate.committeePref1;
             participant.debate.committeePref2 = debate.committeePref2;
-            participant.debate.committeePref3 = debate.committeePref3;
+            // participant.debate.committeePref3 = debate.committeePref3;
         }
         // send registration confirmation email
         let eventString = "";
