@@ -667,13 +667,13 @@ const Register = () => {
                     <h5>CHOOSE EVENTS</h5>
                     <div className="events-choice">
                     <fieldset className="checkbox-group">
-                        <CheckboxCard 
+                        {/* <CheckboxCard 
                             eventName="Metaverse Webinar" 
                             eventMode="Online" 
                             changeFunc={setWorkshop} 
                             logo={metaLogo}
                             handleArray={handleRegEventsArray} 
-                        />
+                        /> */}
                         <CheckboxCard 
                             eventName="Innovation Mela" 
                             eventMode="Offline" 
