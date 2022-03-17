@@ -34,7 +34,7 @@ const EventsPage = () => {
                 </div>
                 <div className="article ">
                     <h1 className="card-heading">Keynote Address</h1>
-                    <p className="text-large">With Shark Tank India releasing their first season, people from all age groups have started to witness the growth of innovation. Since this is the year of innovation, we have someone that will have you on the edge of your seat.</p>
+                    <p className="text-large">With Shark Tank India releasing their first season, people from students of MAHE have started to witness the growth of innovation. Since this is the year of innovation, we have someone that will have you on the edge of your seat.</p>
                 </div>
                 <div className="article">
                     <h1 className="card-heading">Stand-Up Comedy</h1>
@@ -44,7 +44,7 @@ const EventsPage = () => {
               <div className="grid">
                 <div className="article">
                     <h1 className="card-heading">Agree to Disagree</h1>
-                    <p className="text-large">This event allows participants from all age groups to discuss and deliberate on subjects related to the startup world. Contest to experience and win a real life business-related discourse or gain insight about a certain situation from fellow entrepreneurs!</p>
+                    <p className="text-large">This event allows participants from students of MAHE to discuss and deliberate on subjects related to the startup world. Contest to experience and win a real life business-related discourse or gain insight about a certain situation from fellow entrepreneurs!</p>
                 </div>
                 <div className="article">
                     <h1 className="card-heading">Case Maze</h1>

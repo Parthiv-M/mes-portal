@@ -641,7 +641,19 @@ const Register = () => {
                     </div>
                     <div>
                         <label>Year of study</label>
-                        <input required className="reg-input" type="number" onChange={(e) => setUserData({...userData, yearOfStudy: e.target.value})} placeholder="What year are you in?"/>
+                        <select
+                            required 
+                            className="reg-input-select"
+                            onChange={(e) => setUserData({...userData, yearOfStudy: e.target.value})}
+                        >
+                            {
+                                [1, 2, 3, 4].map((val, index) => {
+                                    return (
+                                        <option value={val}>{val}</option>
+                                    )
+                                })
+                            }
+                        </select>
                         <span className="underline"></span>
                     </div>
                     <div>

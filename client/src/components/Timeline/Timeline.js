@@ -48,11 +48,11 @@ const Timeline = () => {
                 <div className="timeline-content">
                     <h2 className="date">27th March 2022</h2>
                     <div className="time-box">
-                        <h5>Online Debate</h5>
+                        <h5>11.00am to 1.00pm</h5>
                         <p>Agree to Disagree ~ Session One</p>
                     </div>
                     <div className="time-box">
-                        <h5>Online Debate</h5>
+                        <h5>2.00pm to 5.00pm</h5>
                         <p>Agree to Disagree ~ Session Two</p>
                     </div>
                     <div className="time-box">
