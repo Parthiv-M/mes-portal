@@ -18,6 +18,7 @@ import keynoteLogo from "./../../assets/logos/9.png"
 import talkLogo from "./../../assets/logos/10.png"
 import bizLogo from "./../../assets/logos/11.png"
 import workshopLogo from "./../../assets/logos/12.png"
+import Back from "../../components/Back/Back";
 
 const Register = () => {
 
@@ -618,6 +619,7 @@ const Register = () => {
 
     return (
         <div className="register-wrapper">
+            <Back />
             <div className="form-wrapper">
                 <div className="events-header">
                     <img src={mes} alt="MES-logo"></img>
