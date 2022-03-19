@@ -447,14 +447,16 @@ const Register = () => {
                 <h6>Money Quest</h6>
                 <div>
                     <label>Number of team members</label>
-                    <input 
+                    <select 
                         required 
-                        className="reg-input" 
+                        className="reg-input-select" 
                         type="text" 
                         value={moneyData.numMems}
                         onChange={(e) => setMoneyData({ ...moneyData, numMems: e.target.value })}
-                        placeholder="Only filled by team leader"
-                    />
+                    >
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
                     <span className="underline"></span>
                 </div>
             </div>
@@ -714,13 +716,13 @@ const Register = () => {
                             logo={debateLogo} 
                             handleArray={handleRegEventsArray}
                         />
-                        {/* <CheckboxCard 
+                        <CheckboxCard 
                             eventName="Money Quest" 
                             eventMode="Offline" 
                             changeFunc={setMoneyQuest} 
                             logo={moneyLogo}
                             handleArray={handleRegEventsArray}
-                        /> */}
+                        />
                         {/* <CheckboxCard 
                             eventName="Keynote Session" 
                             eventMode="Offline" 
