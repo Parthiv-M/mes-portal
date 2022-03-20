@@ -8,7 +8,6 @@
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
 .mahe-logo {
-    /* background-color: white; */
     border-radius: 10px;
 }
 .mes-logo {
@@ -131,7 +130,7 @@
         flex-direction: column;
     }
     .buttons-wrapper button {
-        font-size: 16px;
+        font-size: 12px;
         width: fit-content;
         padding: 10px;
     }

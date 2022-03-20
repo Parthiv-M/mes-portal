@@ -24,6 +24,9 @@ const Landing = () => {
                                     <button>Register Now</button>
                                 </Link>
                             </div>
+                            <Link to="/guidelines">
+                                <button>Guideline</button>
+                            </Link>
                             <Link to="/events">
                                 <button>Events</button>
                             </Link>
