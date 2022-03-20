@@ -176,6 +176,12 @@ const ParticipantSchema = new mongoose.Schema({
         // committeePref3: {
         //     type: String
         // }
+    },
+    talkSeries: {
+        isRegistered: {
+            type: Boolean,
+            default: false 
+        }
     }
 });
 

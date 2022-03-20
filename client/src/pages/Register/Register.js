@@ -593,7 +593,7 @@ const Register = () => {
             if(moneyQuest)
                 user.moneyQuest = moneyData;
             if(talk)
-                user.talk = talk;
+                user.talkSeries = talk;
             if(caseMaze)
                 user.caseMaze = caseMaze;
             console.log(user)
@@ -732,13 +732,13 @@ const Register = () => {
                             logo={keynoteLogo}
                             handleArray={handleRegEventsArray}
                         /> */}
-                        {/* <CheckboxCard 
+                        <CheckboxCard 
                             eventName="Talk Series" 
                             eventMode="Offline" 
                             changeFunc={setTalk}
                             logo={talkLogo} 
                             handleArray={handleRegEventsArray}
-                        /> */}
+                        />
                         <CheckboxCard 
                             eventName="Case Maze" 
                             eventMode="Online" 

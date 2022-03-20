@@ -1,7 +1,7 @@
 const Participant = require('../../models/Participant');
 const { sgMailer } = require('../../utils/sgMailer');
 // get the Console class
-const { Console } = require("console");
+const { Console, timeStamp } = require("console");
 // get fs module for creating write streams
 const fs = require("fs");
 
@@ -34,7 +34,8 @@ const registerParticipant = async (req, res) => {
             pitching,
             startupFair,
             debate,
-            caseMaze
+            caseMaze,
+            talkSeries
         } = req.body
         let participant 
                 = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
@@ -68,6 +69,7 @@ const registerParticipant = async (req, res) => {
                 regEvents
             });
         }   
+        participant.timeStamp = timeStamp;
         // add event info to participant schema
         if(workshop) {
             participant.workshop.isRegistered = true;
@@ -111,11 +113,13 @@ const registerParticipant = async (req, res) => {
             participant.startupFair.extraServ = startupFair.extraServ;  
         }
         if(debate) {
-            console.log(debate)
             participant.debate.isRegistered = true;
             participant.debate.committeePref1 = debate.committeePref1;
             participant.debate.committeePref2 = debate.committeePref2;
             // participant.debate.committeePref3 = debate.committeePref3;
+        }
+        if(talkSeries) {
+            participant.talkSeries.isRegistered = true;
         }
         // send registration confirmation email
         let eventString = "";
