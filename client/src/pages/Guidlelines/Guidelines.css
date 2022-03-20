@@ -1,0 +1,49 @@
+.guide-container {
+    padding: 10px 20px;
+}
+.guide-header {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+.guide-header button {
+    background-color: #D3D3D3;
+    border: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 15px 25px;
+    margin: 20px 0;
+    border-radius: 1.4rem;
+    font-size: 19.2px;
+    font-size: 1.2rem;
+}
+.guide-header button:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    cursor: pointer;
+    color: #A4161A;
+}
+.guide {
+    color: white;
+    padding: 2% 15%;
+}
+.guide-event {
+    color: #A4161A;
+    font-size: 2rem;
+    font-weight: 800;
+}
+.guide-text {
+    font-size: 1.1rem;
+}
+@media only screen and (max-width: 812px) {
+    .guide-head {
+        font-size: 1.6rem;
+    }
+    .guide-header img {
+        width: 100%;
+    }
+    .guide {
+        padding: 1% 2%;
+    }
+}
