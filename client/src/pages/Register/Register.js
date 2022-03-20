@@ -697,13 +697,13 @@ const Register = () => {
                             logo={innovationLogo}
                             handleArray={handleRegEventsArray} 
                         />
-                        {/* <CheckboxCard 
+                        <CheckboxCard 
                             eventName="Panel Discussion" 
                             eventMode="Offline" 
                             changeFunc={setPanel}
                             logo={panelLogo} 
                             handleArray={handleRegEventsArray}
-                        /> */}
+                        />
                         <CheckboxCard 
                             eventName="Pitch Tank" 
                             eventMode="Offline" 
