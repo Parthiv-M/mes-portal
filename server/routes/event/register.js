@@ -17,7 +17,7 @@ const registerParticipant = async (req, res) => {
         const date = new Date();
         offset = (60 * 5 + 30) * 60 * 1000;
         var ISTTime = new Date(date.getTime() + offset);
-        timeStamp = ISTTime;
+        let timeStamp = ISTTime;
         const {
             name,
             college,
@@ -35,7 +35,9 @@ const registerParticipant = async (req, res) => {
             startupFair,
             debate,
             caseMaze,
-            talkSeries
+            talkSeries,
+            workshopOne,
+            workshopTwo
         } = req.body
         let participant 
                 = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
@@ -120,6 +122,12 @@ const registerParticipant = async (req, res) => {
         }
         if(talkSeries) {
             participant.talkSeries.isRegistered = true;
+        }
+        if(workshopOne) {
+            participant.workshopOne.isRegistered = true;
+        }
+        if(workshopTwo) {
+            participant.workshopTwo.isRegistered = true;
         }
         // send registration confirmation email
         let eventString = "";

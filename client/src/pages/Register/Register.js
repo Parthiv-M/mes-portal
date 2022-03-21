@@ -35,6 +35,8 @@ const Register = () => {
     const [keyNote, setKeyNote] = useState(false);
     const [talk, setTalk] = useState(false);
     const [caseMaze, setCaseMaze] = useState(false);
+    const [workshopOne, setWorkOne] = useState(false);
+    const [workshopTwo, setWorkTwo] = useState(false);
 
     let workshopInit = {
         expectations: "",
@@ -330,17 +332,6 @@ const Register = () => {
                     />
                     <span className="underline"></span>
                 </div>
-                {/* <div>
-                    <label>Legal Status</label>
-                    <input 
-                        required
-                        className="reg-input" 
-                        type="text" 
-                        onChange={ (e) => setStartData({ ...startData, legal: e.target.value }) }
-                        placeholder="Legal status"
-                    />
-                    <span className="underline"></span>
-                </div> */}
                 <div>
                     <label>Number of people at desk</label>
                     <input 
@@ -424,20 +415,6 @@ const Register = () => {
                         <option>Sell it Out</option>
                     </select>
                 </div>
-                {/* <div>
-                    <label>Committee Preference Three</label>
-                    <select 
-                        required 
-                        className="reg-input-select" 
-                        onChange={(e) => setDebateData({ ...debateData, committeePref3: e.target.value })}
-                    >
-                        <option>Citizens' Dialogue (Discussion Committee)</option>
-                        <option>Leader's Community (Discussion Committee)</option>
-                        <option>National Planning Commission (MUN Committee)</option>
-                        <option>Review Committee (MUN Committee)</option>
-                        <option>Ministry of Finance: Sectoral Budget Allocation under SIP</option>
-                    </select>
-                </div> */}
             </div>
         )
     }
@@ -509,21 +486,21 @@ const Register = () => {
             return false;
         }
         if(workshop) {
-            Object.values(workData).every(val => {
+            Object.values(workData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 } 
             })
         }   
         if(panel) {
-            Object.values(panData).every(val => {
+            Object.values(panData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 }
             })
         }
         if(pitch) {
-            Object.values(pitchingData).every(val => {
+            Object.values(pitchingData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 }
@@ -538,21 +515,21 @@ const Register = () => {
             }
         }
         if(startup) {
-            Object.values(startData).every(val => {
+            Object.values(startData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 }
             })
         }
         if(debate) {
-            Object.values(debateData).every(val => {
+            Object.values(debateData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 }
             })
         }
         if(moneyQuest) {
-            Object.values(moneyData).every(val => {
+            Object.values(moneyData).forEach(val => {
                 if(val === "") {
                     flag = 1;
                 }
@@ -596,6 +573,10 @@ const Register = () => {
                 user.talkSeries = talk;
             if(caseMaze)
                 user.caseMaze = caseMaze;
+            if(workshopOne)
+                user.workshopOne = workshopOne;
+            if(workshopTwo)
+                user.workshopTwo = workshopTwo;
             console.log(user)
             try {
                 const res 
@@ -653,7 +634,7 @@ const Register = () => {
                             {
                                 [1, 2, 3, 4].map((val, index) => {
                                     return (
-                                        <option value={val}>{val}</option>
+                                        <option key={index} value={val}>{val}</option>
                                     )
                                 })
                             }
@@ -691,17 +672,17 @@ const Register = () => {
                             handleArray={handleRegEventsArray} 
                         /> */}
                         <CheckboxCard 
-                            eventName="Innovation Mela" 
+                            eventName="App Development Workshop" 
                             eventMode="Offline" 
-                            changeFunc={setStartup} 
-                            logo={innovationLogo}
-                            handleArray={handleRegEventsArray} 
+                            changeFunc={setWorkOne} 
+                            logo={workshopLogo}
+                            handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
-                            eventName="Panel Discussion" 
+                            eventName="Business Networking Workshop" 
                             eventMode="Offline" 
-                            changeFunc={setPanel}
-                            logo={panelLogo} 
+                            changeFunc={setWorkTwo} 
+                            logo={workshopLogo}
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
@@ -746,15 +727,29 @@ const Register = () => {
                             logo={caseLogo}
                             handleArray={handleRegEventsArray}
                         />
+                        <CheckboxCard 
+                            eventName="Innovation Mela" 
+                            eventMode="Offline" 
+                            changeFunc={setStartup} 
+                            logo={innovationLogo}
+                            handleArray={handleRegEventsArray} 
+                        />
+                        <CheckboxCard 
+                            eventName="Panel Discussion" 
+                            eventMode="Offline" 
+                            changeFunc={setPanel}
+                            logo={panelLogo} 
+                            handleArray={handleRegEventsArray}
+                        />
                     </fieldset>
                     </div>
                     {workshop ? Workshop() : ""}
-                    {panel ? Panel()  : ""}
                     {pitch ? Pitching()  : ""}
-                    {startup ? StartupFair() : ""}
                     {debate ? Debate() : ""}
                     {moneyQuest ? MoneyQuest() : ""}
                     {caseMaze ? CaseMaze() : ""}
+                    {startup ? StartupFair() : ""}
+                    {panel ? Panel()  : ""}
                     <button onClick={handleSubmit}>Register</button>
                 </form>
             </div>

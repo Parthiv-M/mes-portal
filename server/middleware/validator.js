@@ -19,6 +19,19 @@ const registerValidator = () => {
     ];
 };
 
+const standupValidator = () => {
+    return [
+        check("name")
+        .isLength({min:3})
+        .withMessage("Name must be at least 3 letters long"),
+        check("email").isEmail().withMessage("Enter a valid Email"),
+        check("regNum", "Please enter college registration number")
+        .not()
+        .isEmpty(),
+        check("college", "Select a college name").not().isEmpty()
+    ];
+};
+
 const userValidator = (req, res, next) => {
     const errorArray = validationResult(req)
     if(errorArray.isEmpty()) {
@@ -35,5 +48,6 @@ const userValidator = (req, res, next) => {
 
 module.exports = {
     userValidator,
+    standupValidator,
     registerValidator
 }

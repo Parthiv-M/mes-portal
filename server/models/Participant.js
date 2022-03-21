@@ -64,6 +64,18 @@ const ParticipantSchema = new mongoose.Schema({
             default: false
         }
     },
+    workshopOne: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
+    workshopTwo: {
+        isRegistered: {
+            type: Boolean,
+            default: false
+        }
+    },
     workshop: {
         isRegistered: {
             type: Boolean,
