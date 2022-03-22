@@ -1,41 +1,15 @@
 import React from "react";
 import "./Landing.css";
-import {Link} from "react-router-dom";
-
-import ecell from "./../../assets/eCellLight.png";
-import mahe from "./../../assets/maheLogo.png";
 import mes from "./../../assets/mesLogo.png";
 import Timeline from "../../components/Timeline/Timeline";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Landing = () => {
     return (
         <div className="page-wrapper">
             <div className="gradient-wrapper">
             <div className="content-wrapper">
-                <div className="dummy-nav-wrapper">
-                    <nav className="dummy-nav">
-                        <div className="brand-img">
-                            <img alt="Revels Logo" className="ecell-logo" src={ecell}></img>
-                            <img alt="Revels Logo" className="mahe-logo" src={mahe}></img>
-                        </div>
-                        <div className="buttons-wrapper">
-                            <div className="register">
-                                <Link to="/register">
-                                    <button>Register Now</button>
-                                </Link>
-                            </div>
-                            <Link to="/guidelines">
-                                <button>Guideline</button>
-                            </Link>
-                            <Link to="/events">
-                                <button>Events</button>
-                            </Link>
-                            <a href="#contact">
-                                <button>Contact Us</button>
-                            </a>
-                        </div>
-                    </nav>
-                </div>
+                <Navbar />
                 <div className="description">
                     <div className="mes-logo">
                         <img src={mes} alt="MES Logo"/>

@@ -19,7 +19,6 @@
 .mes-logo img {
     margin: 0;
     padding: 0;
-    /* height: 100%; */
     width: 100%;
 }
 .content-wrapper {
@@ -27,52 +26,8 @@
     min-height: 100vh;
     margin: 0 auto;
 }
-.dummy-nav-wrapper {
-    background-color: #0b090a;
-    /* height: 100%; */
-    width: 100vw;
-    position: fixed;
-    padding: 2% 5%;
-    z-index: 100;
-}
-.dummy-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 10px 0;
-}
-.dummy-nav img {
-    height: 100px;
-}
-.buttons-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 16px;
-    gap: 1rem;
-}
-.buttons-wrapper button {
-    background-color: #A4161A;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 1.4rem;
-    font-size: 19.2px;
-    font-size: 1.2rem;
-}
-.buttons-wrapper button:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.02);
-            transform: scale(1.02);
-}
 .description {
-    padding-top: 15%;
+    padding-top: 5%;
     color: #D3D3D3;
     width: 70%;
     text-align: center;
@@ -83,7 +38,9 @@
     width: 80%;
 }
 .description p {
+    font-size: 19.2px;
     font-size: 1.2rem;
+    padding: 32px 0;
     padding: 32px 0;
     padding: 2rem 0;
 }
@@ -96,6 +53,7 @@
     padding: 15px 25px;
     border-radius: 1.4rem;
     font-size: 19.2px;
+    font-size: 19.2px;
     font-size: 1.2rem;
 }
 .description button:hover {
@@ -106,6 +64,7 @@
 }
 .timeline-head {
     text-align: center;
+    font-size: 38.4px;
     font-size: 38.4px;
     font-size: 2.4rem;
     color: #F5F3F4;
@@ -118,33 +77,10 @@
         height: 200px;
         width: 200px;
     }
-    .brand-img {
-        display: flex;
-        align-items: center;
-    }
-    .dummy-nav-wrapper {
-        height: fit-content;
-        margin: 0;
-    }
-    .dummy-nav{
-        flex-direction: column;
-    }
-    .buttons-wrapper button {
-        font-size: 12px;
-        width: fit-content;
-        padding: 10px;
-    }
-    .buttons-wrapper {
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                    -ms-grid-row-align: center;
-                align-items: center;
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
-    }
     .description {
         width: 100%;
-        padding: 52% 4%;
+        padding: 0 4%;
+        padding-top: 35%;
     }
     .description img {
         width: 90%;

@@ -2,12 +2,12 @@ import React from "react";
 import "./Events.css";
 import mes from "./../../assets/mes.png"
 import { Link } from "react-router-dom";
-import Back from "../../components/Back/Back";
+import Navbar from "../../components/Navbar/Navbar";
 
 const EventsPage = () => {
     return (
         <div className="m-container">
-            <Back />
+            <Navbar />
             <div className="events-header">
                 <img src={mes} alt="MES-logo"></img>
                 <h1 className="events-head">MES Events 2022</h1> 

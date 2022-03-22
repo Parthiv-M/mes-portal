@@ -113,10 +113,10 @@
   
 @media only screen and (max-width: 800px) {
   .checkbox-tile {
-    width: 320px;
+    width: 90vw;
     margin: 10px auto;
   }
   .checkbox-tile .name-logo {
-    padding: 0 7px;
+    padding: 7px;
   }
 }

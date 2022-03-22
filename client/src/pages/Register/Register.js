@@ -6,19 +6,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CheckboxCard from "../../components/CheckboxCard/CheckboxCard";
 
-import caseLogo from "./../../assets/logos/1.png"
-import pitchLogo from "./../../assets/logos/2.png"
-import debateLogo from "./../../assets/logos/3.png"
-import metaLogo from "./../../assets/logos/4.png"
-import moneyLogo from "./../../assets/logos/5.png"
-import standupLogo from "./../../assets/logos/6.png"
-import panelLogo from "./../../assets/logos/7.png"
-import innovationLogo from "./../../assets/logos/8.png"
-import keynoteLogo from "./../../assets/logos/9.png"
-import talkLogo from "./../../assets/logos/10.png"
-import bizLogo from "./../../assets/logos/11.png"
-import workshopLogo from "./../../assets/logos/12.png"
-import Back from "../../components/Back/Back";
+import caseLogo from "./../../assets/logos/1.png";
+import pitchLogo from "./../../assets/logos/2.png";
+import debateLogo from "./../../assets/logos/3.png";
+import moneyLogo from "./../../assets/logos/5.png";
+import panelLogo from "./../../assets/logos/7.png";
+import innovationLogo from "./../../assets/logos/8.png";
+import talkLogo from "./../../assets/logos/10.png";
+import workshopLogo from "./../../assets/logos/12.png";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Register = () => {
 
@@ -26,7 +22,7 @@ const Register = () => {
 
     const d2cLink = "https://dare2compete.com/p/case-maze-manipal-entrepreneurship-summit-manipal-academy-of-higher-education-mahe-karnataka-273797";
 
-    const [workshop, setWorkshop] = useState(false);
+    // const [workshop, setWorkshop] = useState(false);
     const [moneyQuest, setMoneyQuest] = useState(false);
     const [panel, setPanel] = useState(false);
     const [pitch, setPitch] = useState(false);
@@ -485,13 +481,13 @@ const Register = () => {
             toast.error("Enter a valid phone number", { id: toastId });
             return false;
         }
-        if(workshop) {
-            Object.values(workData).forEach(val => {
-                if(val === "") {
-                    flag = 1;
-                } 
-            })
-        }   
+        // if(workshop) {
+        //     Object.values(workData).forEach(val => {
+        //         if(val === "") {
+        //             flag = 1;
+        //         } 
+        //     })
+        // }   
         if(panel) {
             Object.values(panData).forEach(val => {
                 if(val === "") {
@@ -557,8 +553,8 @@ const Register = () => {
             // add the relevant data to the user object
             if(keyNote)
                 user.keyNote = keyNote;
-            if(workshop)
-                user.workshop = workData;
+            // if(workshop)
+            //     user.workshop = workData;
             if(panel)
                 user.panel = panData;   
             if(pitch)
@@ -600,7 +596,7 @@ const Register = () => {
 
     return (
         <div className="register-wrapper">
-            <Back />
+            <Navbar />
             <div className="form-wrapper">
                 <div className="events-header">
                     <img src={mes} alt="MES-logo"></img>
@@ -743,7 +739,7 @@ const Register = () => {
                         />
                     </fieldset>
                     </div>
-                    {workshop ? Workshop() : ""}
+                    {/* {workshop ? Workshop() : ""} */}
                     {pitch ? Pitching()  : ""}
                     {debate ? Debate() : ""}
                     {moneyQuest ? MoneyQuest() : ""}

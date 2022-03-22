@@ -1,7 +1,6 @@
 .register-wrapper {
     min-height: 100vh;
     width: 100vw;
-    padding: 5rem;
     color: white;
     background: conic-gradient(from 150deg at 0% 10%, #660708, #0b090a);
 }
@@ -30,6 +29,13 @@
 }
 .form-wrapper form {
     width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 label {
     display: block;
@@ -104,7 +110,6 @@ textarea {
     margin: 0;
     margin-top: 10px;
     margin-left: 5px;
-    font-size: 17.6px;
     font-size: 1.1rem;
 }
 .events-choice div {
@@ -113,7 +118,6 @@ textarea {
 .events-choice label {
     display: inline;
     font-size: 16px;
-    font-size: 1rem;
 }
 .events-choice {
     display: -webkit-box;
@@ -129,7 +133,6 @@ textarea {
     padding: 10px 0;
     border-bottom: 1px solid grey;
     border-top: 1px solid grey;
-    font-size: 16px;
     font-size: 1rem;
 }
 textarea {
@@ -150,7 +153,6 @@ textarea {
     border-radius: 10px;
     color: white;
     text-transform: uppercase;
-    font-size: 20px;
     font-size: 1.25rem;
     margin: 10px 0;
     background-color: black;
@@ -166,9 +168,10 @@ form button:hover {
 }
 @media only screen and (max-width: 812px) {
     .register-wrapper {
-        padding: 1rem;
+        padding-top: 30%;
     }
     .form-wrapper form {
         width: 100%;
+        padding: 1rem;
     }
 }

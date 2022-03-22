@@ -52,7 +52,7 @@ h4 {
     color: #A4161A;
 }
 .meta {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 .meta p:first-child {
     color: grey;

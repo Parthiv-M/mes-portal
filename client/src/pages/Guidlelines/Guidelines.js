@@ -2,12 +2,12 @@ import React from "react";
 import "./Guidelines.css";
 import mes from "./../../assets/mes.png";
 import { Link } from "react-router-dom";
-import Back from "./../../components/Back/Back";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Guidelines = () => {
     return (
         <div className="guide-container">
-            <Back />
+            <Navbar />
             <div className="guide-header">
                 <img src={mes} alt="MES-logo"></img>
                 <h1 className="events-head">Event Guidelines</h1> 
