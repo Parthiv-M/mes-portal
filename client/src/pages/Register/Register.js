@@ -672,7 +672,7 @@ const Register = () => {
                             handleArray={handleRegEventsArray} 
                         /> */}
                         <CheckboxCard 
-                            eventName="App Development Workshop" 
+                            eventName="Business Development Workshop" 
                             eventMode="Offline" 
                             changeFunc={setWorkOne} 
                             logo={workshopLogo}
