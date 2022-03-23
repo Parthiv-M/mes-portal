@@ -62,7 +62,6 @@ const Register = () => {
     };
     let startupInit = {
         name: "",
-        legal: "",
         numDesk: 0,
         category: "",
         describe: "",
@@ -80,7 +79,7 @@ const Register = () => {
     const [userData, setUserData] = useState({
             name: "",
             college: "",
-            yearOfStudy: 0,
+            yearOfStudy: 1,
             phoneNum: 0,
             email: "",
             learnerId: "",

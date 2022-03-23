@@ -10,6 +10,7 @@ import EventsPage from "./pages/Events/Events";
 import Register from './pages/Register/Register';
 import Footer from './components/Footer/Footer';
 import Guidelines from "./pages/Guidlelines/Guidelines";
+import Standup from './pages/Standup/Standup';
 
 function App() {
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -36,6 +37,11 @@ function App() {
             exact
             path="/guidelines"
             element={ <Guidelines /> }
+          />
+          <Route
+            exact
+            path="/standup"
+            element={ <Standup /> }
           />
         </Routes>
       </Router>

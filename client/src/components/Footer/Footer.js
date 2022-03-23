@@ -14,18 +14,18 @@ const Footer = () => {
                 <p>Get in touch</p>
                 <div className="icons">
                     <a rel="noreferrer" target="_blank" href="https://www.instagram.com/ecell.mit/?igshid=xdfcrxt635x1">
-                        <img src={instagram}></img>
+                        <img alt="Instagram" src={instagram}></img>
                     </a>
                     <a href="mailto:ecell.mit@manipal.edu">
-                        <img src={email}></img>
+                        <img alt="Email" src={email}></img>
                     </a>
                     <a href="https://www.linkedin.com/company/ecellmit">
-                        <img src={linkedin}></img>
+                        <img alt="Linkedin" src={linkedin}></img>
                     </a>
                 </div>
                 <div className="meta">
                     {/* <p className="conducted">Conducted by</p> */}
-                    <img width="100px" src={ecell}></img>
+                    <img alt="E-Cell" width="100px" src={ecell}></img>
                     <h4>The Entrepreneurship Cell, MIT Manipal</h4>
                     <div className="links-nav">
                         <a href="/">Home</a>
