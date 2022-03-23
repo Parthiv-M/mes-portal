@@ -728,7 +728,7 @@ const Register = () => {
                         />
                         <CheckboxCard 
                             eventName="BizQuiz" 
-                            eventMode="Offline" 
+                            eventMode="Online" 
                             changeFunc={setBiz}
                             logo={bizLogo} 
                             handleArray={handleRegEventsArray}
