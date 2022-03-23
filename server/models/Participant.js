@@ -194,6 +194,12 @@ const ParticipantSchema = new mongoose.Schema({
             type: Boolean,
             default: false 
         }
+    },
+    bizQuiz: {
+        isRegistered: {
+            type: Boolean,
+            default: false 
+        }
     }
 });
 

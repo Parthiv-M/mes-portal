@@ -37,7 +37,8 @@ const registerParticipant = async (req, res) => {
             caseMaze,
             talkSeries,
             workshopOne,
-            workshopTwo
+            workshopTwo,
+            bizQuiz
         } = req.body
         let participant 
                 = await Participant.findOne({ $or: [ { regNum }, { learnerId }, { phoneNum }] });
@@ -128,6 +129,9 @@ const registerParticipant = async (req, res) => {
         }
         if(workshopTwo) {
             participant.workshopTwo.isRegistered = true;
+        }
+        if(bizQuiz) {
+            participant.bizQuiz.isRegistered = true;
         }
         // send registration confirmation email
         let eventString = "";

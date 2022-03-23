@@ -14,6 +14,7 @@ import panelLogo from "./../../assets/logos/7.png";
 import innovationLogo from "./../../assets/logos/8.png";
 import talkLogo from "./../../assets/logos/10.png";
 import workshopLogo from "./../../assets/logos/12.png";
+import bizLogo from "./../../assets/logos/11.png";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Register = () => {
@@ -33,6 +34,7 @@ const Register = () => {
     const [caseMaze, setCaseMaze] = useState(false);
     const [workshopOne, setWorkOne] = useState(false);
     const [workshopTwo, setWorkTwo] = useState(false);
+    const [biz, setBiz] = useState(false);
 
     let workshopInit = {
         expectations: "",
@@ -568,6 +570,8 @@ const Register = () => {
                 user.talkSeries = talk;
             if(caseMaze)
                 user.caseMaze = caseMaze;
+            if(biz)
+                user.bizQuiz = biz;
             if(workshopOne)
                 user.workshopOne = workshopOne;
             if(workshopTwo)
@@ -720,6 +724,13 @@ const Register = () => {
                             eventMode="Online" 
                             changeFunc={setCaseMaze} 
                             logo={caseLogo}
+                            handleArray={handleRegEventsArray}
+                        />
+                        <CheckboxCard 
+                            eventName="BizQuiz" 
+                            eventMode="Offline" 
+                            changeFunc={setBiz}
+                            logo={bizLogo} 
                             handleArray={handleRegEventsArray}
                         />
                         <CheckboxCard 
