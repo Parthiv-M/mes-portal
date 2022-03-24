@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const StandupSchema = new mongoose.Schema({
+    userid: {
+        type: Number
+    },
     name: {
         type: String, 
         required: true

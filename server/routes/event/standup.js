@@ -1,7 +1,7 @@
 const Standup = require("./../../models/Standup");
 const { sgMailer } = require('../../utils/sgMailer');
 // get the Console class
-const { Console, timeStamp } = require("console");
+const { Console } = require("console");
 // get fs module for creating write streams
 const fs = require("fs");
 
@@ -44,21 +44,34 @@ const registerStandup = async (req, res) => {
     } else {
         // allow registrations
         try {
+            // fetch all users for standup
+            let user 
+                = await Standup.find({});
+            let newUserId;
+            // find a new userid 
+            if(user.length === 0) {
+                newUserId = 1000;
+            } else {
+                newUserId = user[user.length-1].userid + 1;
+            }
             let standupreg = new Standup({
                 name,
                 college,
                 email,
-                regNum
+                regNum,
+                userid: newUserId
             });
             standupreg.timeStamp = timeStamp;
-            // const data = {
-            //     receiver: email,
-            //     sender: "mes22.ecellmit@gmail.com",
-            //     templateName: "standup",
-            //     name: name
-            // }
-            // sgMailer(data);
+            const data = {
+                receiver: email,
+                sender: "mes22.ecellmit@gmail.com",
+                templateName: "standup",
+                name: name,
+                id: newUserId
+            }
+            sgMailer(data);
             await standupreg.save();
+            myLogger.log("user " + newUserId + " registered")
             return res.status(200).json({ success: true, message: "You have registered successfully!" })    
         } catch (error) {
             myLogger.error(error);
