@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Standup.css";
+import toast from "react-hot-toast";
 import calendar from "./calendar.svg";
 import map from "./map.svg";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Standup = () => {
+    const [userData, setUserData] = useState({
+        name: "",
+        email: "",
+        regNum: 0,
+        college: "MIT"
+    });
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const toastId = toast.loading("Loading...");
+        if(userData.name === "" || userData.email === "" || userData.college === "") {
+            toast.error("Fields are incomplete", { id: toastId });
+        } else if(userData.regNum.toString().length < 7) {
+            toast.error("Invalid Registration Number", { id: toastId });
+        } else {
+            const res 
+                = await axios.post(
+                    "/api/standup/register", 
+                    { ...userData }
+                );
+            if(res.data.success) {
+                toast.success("Successfully registered for the show!", { id: toastId });
+                setTimeout(() => {
+                    navigate("/");
+                }, 3000);
+            } else {
+                console.log(res)
+                toast.error(res.data.msg[0][Object.keys(res.data.msg[0])[0]], { id: toastId });
+            }
+        }
+    }
     return (
         <div className="standup-wrapper">
             <div className="standup-header">
@@ -41,28 +75,31 @@ const Standup = () => {
                             type="text" 
                             autoComplete="off" 
                             placeholder="Enter your name"
+                            onChange={(e) => setUserData({...userData, name: e.target.value})}
                         />
                         <span className="underline"></span>
                     </div>
                     <div>
-                        <label>Name</label>
+                        <label>Email ID</label>
                         <input 
                             required 
                             className="reg-input" 
                             type="email" 
                             autoComplete="off" 
                             placeholder="Enter your email"
+                            onChange={(e) => setUserData({...userData, email: e.target.value})}
                         />
                         <span className="underline"></span>
                     </div>
                     <div>
-                        <label>Name</label>
+                        <label>Registration Number</label>
                         <input 
                             required 
                             className="reg-input" 
                             type="number" 
                             autoComplete="off" 
                             placeholder="Enter your registration number"
+                            onChange={(e) => setUserData({...userData, regNum: e.target.value})}
                         />
                         <span className="underline"></span>
                     </div>
@@ -73,6 +110,7 @@ const Standup = () => {
                             className="reg-input-select" 
                             type="text" 
                             autoComplete="off" 
+                            onChange={(e) => setUserData({...userData, college: e.target.value})}
                         >
                             <option>MIT</option>
                             <option>KMC</option>
@@ -83,7 +121,7 @@ const Standup = () => {
                         </select>
                         <span className="underline"></span>
                     </div>
-                    <button>Register</button>
+                    <button onClick={(e) => handleSubmit(e)}>Register</button>
                 </form>
             </div>
         </div>

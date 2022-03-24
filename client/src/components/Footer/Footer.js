@@ -33,6 +33,8 @@ const Footer = () => {
                         <a href="/events">Events</a>
                         <p>|</p>
                         <a href="/register">Register</a>
+                        <p>|</p>
+                        <a href="/standup">Standup</a>
                     </div>
                     <p>Manipal Entrepreneurship Summit 2022</p>
                     <div className="contact-area">
