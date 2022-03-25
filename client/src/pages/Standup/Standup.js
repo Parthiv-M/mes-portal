@@ -34,7 +34,7 @@ const Standup = () => {
                 }, 3000);
             } else {
                 console.log(res)
-                toast.error(res.data.msg[0][Object.keys(res.data.msg[0])[0]], { id: toastId });
+                toast.error(res.data.message, { id: toastId });
             }
         }
     }
