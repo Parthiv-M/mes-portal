@@ -70,6 +70,7 @@ const registerStandup = async (req, res) => {
                 id: newUserId
             }
             sgMailer(data);
+            standupreg.mailSent = true;
             await standupreg.save();
             myLogger.log("user " + newUserId + " registered")
             return res.status(200).json({ success: true, message: "You have registered successfully!" })    
