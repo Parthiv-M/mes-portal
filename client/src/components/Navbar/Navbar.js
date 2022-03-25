@@ -24,6 +24,9 @@ const Navbar = () => {
             </div>
             <ul class="nav-menu">
                 <li class="nav-item" onClick={closeNav}>
+                    <a href="/standup" class="nav-link">Standup</a>
+                </li>
+                <li class="nav-item" onClick={closeNav}>
                     <a href="/register" class="nav-link">Register</a>
                 </li>
                 <li class="nav-item" onClick={closeNav}>
