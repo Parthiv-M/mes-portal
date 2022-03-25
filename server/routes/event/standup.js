@@ -38,7 +38,7 @@ const registerStandup = async (req, res) => {
     } else if (college === "KMC" && regs.length === 200) {
         // don't allow registrations
         return res.status(200).json({ success: false, message: "Registrations for KMC are closed!" });
-    } else if ((college === "TAPMI" || college === "MCOPS" || college === "OTHERS") && regs.length === 300) {
+    } else if ((college === "TAPMI" || college === "MCOPS" || college === "OTHERS...") && regs.length === 300) {
         // don't allow registrations
         return res.status(200).json({ success: false, message: `Registrations for ${college} are closed!` });
     } else {
