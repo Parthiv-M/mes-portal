@@ -28,7 +28,7 @@ const Standup = () => {
                     { ...userData }
                 );
             if(res.data.success) {
-                toast.success("Successfully registered for the show!", { id: toastId });
+                toast.success("Registrations are closed!", { id: toastId });
                 setTimeout(() => {
                     navigate("/");
                 }, 3000);
